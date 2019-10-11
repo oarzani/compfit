@@ -23,7 +23,7 @@ const CheckIcon = styled(Check)`
   fill: rgb(255, 255, 255);
 `;
 
-export default function AddButton({ onClick }) {
+export default function ApplyButton({ onClick }) {
   return (
     <Button onClick={onClick}>
       <CheckIcon />

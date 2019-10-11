@@ -1,8 +1,8 @@
 import React from "react";
-import AddButton from "../components/ApplyButton";
+import ApplyButton from "../components/ApplyButton";
 
 export default {
-  title: "AddButton"
+  title: "ApplyButton"
 };
 
-export const Default = () => <AddButton />;
+export const Default = () => <ApplyButton />;
