@@ -7,6 +7,7 @@ export default function OpenAccordion({ className }) {
       width="25.369"
       height="14.195"
       viewBox="0 0 25.369 14.195"
+      className={className}
     >
       <path
         id="angle-left-solid"
