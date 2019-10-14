@@ -7,7 +7,7 @@ export default {
 export const ItPlays = () => (
   <>
     <Accordion>Courses</Accordion>
-    <Accordion>Courses</Accordion>
-    <Accordion>Courses</Accordion>
+    <Accordion>Openening Hours</Accordion>
+    <Accordion>Cardio</Accordion>
   </>
 );
