@@ -1,8 +1,10 @@
 import React from "react";
 import RangeBar from "../components/RangeBar";
-import InputRange from "react-input-range";
+import FilterBar from "../components/FilterBar";
 export default {
   title: "Bars"
 };
 
 export const PriceRangeBar = () => <RangeBar />;
+
+export const Filter = () => <FilterBar />;

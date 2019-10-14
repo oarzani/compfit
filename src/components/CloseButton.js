@@ -1,33 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-// import Check from "./icons/Check";
-import CheckSecond from "./icons/CheckSecond";
+import X from "./icons/X";
 
 const Button = styled.button`
-  background: rgb(78, 203, 224);
+  background: rgb(255, 147, 135);
   border-radius: 50%;
   outline: none;
   border: none;
   padding: 0px;
   cursor: pointer;
-  width: 61px;
-  height: 61px;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   justify-content: center;
 `;
 
-const CheckIcon = styled(CheckSecond)`
-  height: 28px;
-  width: 28px;
+const CloseIcon = styled(X)`
+  height: 12.71px;
+  width: 12.71px;
   margin: auto;
-  fill: rgb(255, 255, 255);
+  fill: white;
 `;
 
-export default function ApplyButton({ onClick }) {
+export default function CloseButton({ onClick }) {
   return (
     <Button onClick={onClick}>
-      <CheckIcon />
+      <CloseIcon />
     </Button>
   );
 }
