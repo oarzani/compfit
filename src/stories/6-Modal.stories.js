@@ -36,7 +36,7 @@ export const Modalize = () => (
 export function Show() {
   return (
     <Modal onAccept={action("accept")} onClose={action("close")}>
-      <Title>Choose Time</Title>
+      <Title>Choose Contract Duration</Title>
       <DurationBar />
       <Title>Choose Price</Title>
       <RangeBar />
