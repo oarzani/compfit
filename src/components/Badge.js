@@ -19,6 +19,7 @@ const BadgeDiv = styled.div`
           box-shadow: 2px rgb(110, 94, 94);
         `}
   margin: 5px;
+  max-width: fit-content;
 `;
 
 export default function Badge({ active = true, children }) {

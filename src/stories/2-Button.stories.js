@@ -1,8 +1,11 @@
 import React from "react";
-import AddButton from "../components/ApplyButton";
+import ApplyButton from "../components/ApplyButton";
+import CloseButton from "../components/CloseButton";
 
 export default {
-  title: "AddButton"
+  title: "ApplyButton"
 };
 
-export const Default = () => <AddButton />;
+export const Default = () => <ApplyButton />;
+
+export const Close = () => <CloseButton />;
