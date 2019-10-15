@@ -47,7 +47,7 @@ export default function Accordion({ title, content }) {
     <>
       <AccordionWrapper>
         <AccordionDiv onClick={handleClick}>
-          {/* {title} */} Kurse
+          {title} Kurse
           <Arrow show={toggleContent}>
             <OpenAccordion />
           </Arrow>
