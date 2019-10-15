@@ -4,13 +4,13 @@ import "react-input-range/lib/css/index.css";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  width: 270px;
-  height: 150px;
+  width: 80%;
+  height: 50px;
   padding: 20px;
 `;
 
 export default function RangeBar() {
-  const [selectedValue, setSelectedValue] = useState({ min: 15, max: 20 });
+  const [selectedValue, setSelectedValue] = useState("");
 
   function handleChange(event) {
     // console.log(event);
@@ -22,7 +22,7 @@ export default function RangeBar() {
       <InputRange
         formatLabel={selectedValue => `${selectedValue} €`}
         maxValue={80}
-        minValue={14.9}
+        minValue={0}
         value={selectedValue}
         onChange={handleChange}
       />

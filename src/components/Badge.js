@@ -20,6 +20,7 @@ const BadgeDiv = styled.div`
         `}
   margin: 5px;
   max-width: fit-content;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 export default function Badge({ active = true, children }) {
