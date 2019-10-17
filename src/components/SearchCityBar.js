@@ -9,8 +9,7 @@ const WrappSearchBar = styled.form`
 const SearchBar = styled.input`
   background: #fff;
   width: 100%;
-  height: 37px;
-  min-width: 349px;
+  height: 30px;
   font-size: 16pt;
 
   padding-left: 10px;
@@ -28,7 +27,7 @@ const FindButton = styled.button`
   min-width: 80px;
 `;
 
-export default function StartSearch({ onClick }) {
+export default function SearchCityBar({ onClick }) {
   return (
     <WrappSearchBar>
       <SearchBar />
