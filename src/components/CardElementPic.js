@@ -9,15 +9,15 @@ const PicWrapper = styled.div`
   margin: 10px 20px;
   width: 40%;
 `;
-
+// height used to be 90vh before.
 const StyledImageDiv = styled.div`
-  height: 90vh;
+  height: 80%;
 `;
 
 const Details = styled.p`
   color: #4ecbe0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 8pt;
+  font-size: 16pt;
 `;
 
 export default function CardElementPic({ image, link }) {

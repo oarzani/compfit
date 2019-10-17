@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CardElementPic from "./CardElementPic";
 import CardElementText from "./CardElementText";
 
-const Flexbox = styled.article`
+const CardWrapper = styled.article`
   display: flex;
   background: white;
   width: fit-content;
@@ -12,13 +12,11 @@ const Flexbox = styled.article`
   border: 3px solid rgb(110, 94, 94);
 `;
 
-export default function CardComponent() {
+export default function CardComponent({ link, image }) {
   return (
-    <>
-      <Flexbox>
-        <CardElementPic />
-        <CardElementText />
-      </Flexbox>
-    </>
+    <CardWrapper>
+      <CardElementPic />
+      <CardElementText />
+    </CardWrapper>
   );
 }

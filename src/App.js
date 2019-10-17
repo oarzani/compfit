@@ -6,10 +6,8 @@ import MainPage from "./Pages/Main";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <Start /> */}
-        <MainPage />
-      </header>
+      {/* <Start /> */}
+      <MainPage />
     </div>
   );
 }

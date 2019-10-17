@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import StartSearch from "../components/SearchCityBar";
 import Header from "../components/Header";
+import SearchCityBar from "../components/SearchCityBar";
 
 const Main = styled.main`
   display: flex;
@@ -60,7 +60,7 @@ export default function Start() {
           Find the gym that fits <br />
           you
         </Text>
-        <StartSearch />
+        <SearchCityBar />
       </SearchBarWrapper>
       <PictureWrapper>
         <StyledImage src="/pics/Gym1.jpeg" alt="" />

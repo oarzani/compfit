@@ -16,7 +16,6 @@ const Main = styled.main`
 `;
 
 const FilterSection = styled.section`
-  position: fixed;
   display: flex;
   flex-direction: column;
   width: 100%;
