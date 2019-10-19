@@ -5,6 +5,8 @@ import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
 import { studios } from "../api/Studios";
+import Modal from "../components/Modal";
+import { Show } from "../stories/6-Modal.stories";
 
 const Main = styled.main`
   display: flex;
@@ -25,17 +27,19 @@ const FilterSection = styled.section`
   margin-bottom: 10px;
 `;
 
-export default function MainPage({}) {
+export default function MainPage({ studio }) {
   // To-Do: State der besteht aus filteredStudios setFilteredStudios
   const [filteredStudios, setFilteredStudios] = React.useState(studios);
+  const [showModal, setShowModal] = React.useState(false);
   return (
     <>
+      {showModal && <Show handleClickEvent={() => setShowModal(false)} />}
       <Header />
 
       <Main>
         <FilterSection>
           <SecondSearchbar />
-          <FilterBar />
+          <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
         <StudioList studios={filteredStudios} />
         {/* In das Studio List filteredStudios={filteredStudios} */}
