@@ -4,6 +4,7 @@ import { SecondSearchbar } from "../components/SearchCityBarGrey";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
+import { studios } from "../api/Studios";
 
 const Main = styled.main`
   display: flex;
@@ -24,16 +25,20 @@ const FilterSection = styled.section`
   margin-bottom: 10px;
 `;
 
-export default function MainPage() {
+export default function MainPage({}) {
+  // To-Do: State der besteht aus filteredStudios setFilteredStudios
+  const [filteredStudios, setFilteredStudios] = React.useState(studios);
   return (
     <>
       <Header />
+
       <Main>
         <FilterSection>
           <SecondSearchbar />
           <FilterBar />
         </FilterSection>
-        <StudioList />
+        <StudioList studios={filteredStudios} />
+        {/* In das Studio List filteredStudios={filteredStudios} */}
       </Main>
     </>
   );

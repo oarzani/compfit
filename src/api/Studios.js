@@ -1,6 +1,6 @@
 export const studios = [
   {
-    imgLogo: "src",
+    imageLogo: "src",
     imgDetail: "src",
     name: "Fittness First Eherenfeld",
     price: ["40"],
@@ -12,15 +12,16 @@ export const studios = [
     ladyarea: true,
     personaltraining: false,
     neighbourhood: "Ehrenfeld",
-    adress: { street: "Venloer Str. 389", plz: "50825", city: "Köln" },
+    adress: "Venloer Str. 389 50825 Köln",
     website: "https://www.fitnessfirst.de/clubs/koeln-ehrenfeld",
-    imgLocation: ""
+    imgLocation: "",
+    city: "Köln"
   },
   {
-    imgLogo: "src",
+    imageLogo: "src",
     imgDetail: "src",
     name: "FitnessLoft",
-    price: ["80", "30"],
+    price: [80, 30],
     duration: ["flex", "24"],
     courses: [
       "Yoga",
@@ -36,12 +37,13 @@ export const studios = [
     ladyarea: true,
     personaltraining: true,
     neighbourhood: ["Altstadt-Nord"],
-    adress: { street: "Eigelstein 80-88", plz: "50668", city: "Köln" },
+    adress: "Eigelstein 80-88 50668 Köln",
     website: "https://fitnessloft.de/fitnessstudios/koeln/",
-    imgLocation: "src"
+    imgLocation: "src",
+    city: "Köln"
   },
   {
-    imgLogo: "src",
+    imageLogo: "src",
     imgDetail: "src",
     name: "Mc Fit Altstadt",
     price: ["19.90"],
@@ -54,13 +56,14 @@ export const studios = [
     ladyarea: true,
     personaltraining: false,
     neighbourhood: ["Innenstadt"],
-    adress: { street: "Hohe Str. 62-68", plz: "50667", city: "Köln" },
+    adress: "Hohe Str. 62-68 50667 Köln",
     website:
       "https://www.mcfit.com/de/studios/studiosuche/studiodetails/studio/koeln-altstadt/",
-    imgLocation: ""
+    imgLocation: "",
+    city: "Köln"
   },
   {
-    imgLogo: "src",
+    imageLogo: "src",
     imgDetail: "src",
     name: "Holmes Place am Gürzenich",
     price: ["89.90", "74.9", "64.9"],
@@ -79,12 +82,13 @@ export const studios = [
     ladyarea: true,
     personaltraining: true,
     neighbourhood: ["Altstadt-Nord", "Innenstadt"],
-    adress: { street: "Gürzenichstraße 6", plz: "50667", city: "Köln" },
+    adress: "Gürzenichstraße 6 50667 Köln",
     website: "http://holmesplace.de/am-guerzenich.c/de/",
-    imgLocation: ""
+    imgLocation: "",
+    city: "Köln"
   },
   {
-    imgLogo: "src",
+    imageLogo: "src",
     imgDetail: "src",
     name: "Bushido Fitness",
     price: ["58", "53", "48"],
@@ -96,12 +100,13 @@ export const studios = [
     ladyarea: false,
     personaltraining: false,
     neighbourhood: ["Innestadt"],
-    adress: { street: "Mittelstraße 12", plz: "50672", city: "Köln" },
+    adress: "Mittelstraße 12, 50672 Köln",
     website: "https://www.bushido-fitness.de/",
-    imgLocation: ""
+    imgLocation: "",
+    city: "Köln"
   },
   {
-    imgLogo: "src",
+    imageLogo: "src",
     imgDetail: "src",
     name: "Art of Fitness",
     price: ["39.90", "29.90", "24.90"],
@@ -120,13 +125,14 @@ export const studios = [
     ladyarea: true,
     personaltraining: true,
     neighbourhood: ["Ehrenfeld"],
-    adress: { street: "Maarweg 149-152", plz: "50825", city: "Köln" },
+    adress: "Maarweg 149-152 50825 Köln",
     website: "http://art-of-fitness.de/",
-    imgLocation: ""
+    imgLocation: "",
+    city: "Köln"
   },
 
   {
-    imgLogo: "src",
+    imageLogo: "src",
     imgDetail: "src",
     name: "Fittness First-Innenstadt",
     price: ["40"],
@@ -154,12 +160,13 @@ export const studios = [
     ladyarea: true,
     personaltraining: true,
     neighbourhood: ["Innenstadt"],
-    adress: { street: "Schildergasse 94", plz: "50667", city: "Köln" },
+    adress: "Schildergasse 94 50667 Köln",
     website: "http://www.fitnessfirst.de/clubs/koeln-innenstadt-schildergasse/",
-    imgLocation: ""
+    imgLocation: "",
+    city: "Köln"
   },
   {
-    imgLogo: "src",
+    imageLogo: "src",
     imgDetail: "src",
     name: "Just Fit 13",
     price: ["75", "55", "45"],
@@ -184,9 +191,10 @@ export const studios = [
     ladyarea: true,
     personaltraining: true,
     neighbourhood: ["Altstadt-Süd"],
-    adress: { street: "Hohenstaufenring 30-32", plz: "50674 ", city: "Köln" },
+    adress: "Hohenstaufenring 30-32, 50674 Köln",
     website:
       "https://www.justfit-clubs.de/just-fit-13-city-koeln-altstadt-sued.html",
-    imgLocation: ""
+    imgLocation: "",
+    city: "Köln"
   }
 ];

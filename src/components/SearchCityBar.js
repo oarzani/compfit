@@ -27,10 +27,18 @@ const FindButton = styled.button`
   min-width: 80px;
 `;
 
-export default function SearchCityBar({ onClick }) {
+export default function SearchCityBar({ onSearch, onClick }) {
+  function handleInputChange(event) {
+    const value = event.target.value;
+    onSearch(value);
+  }
   return (
     <WrappSearchBar>
-      <SearchBar />
+      <SearchBar
+        type="search"
+        placeholder="Stadt eingeben..."
+        onChange={handleInputChange}
+      />
 
       <FindButton type="submit" onClick={onClick}>
         Go

@@ -5,6 +5,8 @@ import RangeBar from "../components/RangeBar";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
 import Badge from "../components/Badge";
+import Start from "../Pages/Start";
+import MainPage from "../Pages/MainPage";
 
 export default {
   title: "Modal-Components"
@@ -78,3 +80,9 @@ export function Hide() {
     </>
   );
 }
+
+export const Test = () => (
+  <>
+    <MainPage />
+  </>
+);

@@ -17,13 +17,13 @@ const StyledImageDiv = styled.div`
 const Details = styled.p`
   color: #4ecbe0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16pt;
+  font-size: 12pt;
 `;
 
-export default function CardElementPic({ image, link }) {
+export default function CardElementPic({ imageLogo, link }) {
   return (
     <PicWrapper>
-      <StyledImageDiv>{image}</StyledImageDiv>
+      <StyledImageDiv>{imageLogo}</StyledImageDiv>
       <Details>{`Details ${link}`}</Details>
     </PicWrapper>
   );

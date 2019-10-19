@@ -12,18 +12,26 @@ const List = styled.section`
 `;
 
 // Mapping happens in this file//
-export default function StudioList() {
+export default function StudioList({ studios }) {
   return (
     <List>
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
+      {studios.map(studio => {
+        return <CardComponent studio={studio} />;
+      })}
     </List>
   );
 }
+
+// export default function LibraryContainer(children) {
+//   return (
+//     <>
+//       {games.map((game, index) => {
+//         return (
+//           <ListContainerBorder game={game}>
+//             <Game key={game.title} game={game} />
+//           </ListContainerBorder>
+//         );
+//       })}
+
+//       <UpdateNotification />
+//     </>
