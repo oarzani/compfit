@@ -46,14 +46,15 @@ export default function Modal({
   show = true,
   hideBackdrop,
   onClose,
-  onAccept
+  onAccept,
+  handleClickEvent
 }) {
   return (
     <>
       <Container show={show}>
         {children}
         <ClosingDiv>
-          <CloseButton onClick={onClose} />
+          <CloseButton onClick={handleClickEvent} />
         </ClosingDiv>
         <SubmitButton>
           <ApplyButton onClick={onAccept} />
