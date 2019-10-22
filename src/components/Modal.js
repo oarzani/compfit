@@ -51,10 +51,10 @@ export default function Modal({
   hideBackdrop,
   handleClickEvent
 }) {
-  // const [activeOptions, setActiveOptions] = React.useState({
-  //   Wellness: true
-  // });
-  // console.log(activeOptions);
+  const [activeOptions, setActiveOptions] = React.useState({
+    Wellness: true
+  });
+  console.log(activeOptions);
 
   return (
     <>

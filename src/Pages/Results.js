@@ -41,6 +41,8 @@ export default function Results() {
   const [activeOptions, setActiveOptions] = React.useState({});
   console.log(activeOptions);
 
+  function handleActiveOptions(key) {}
+
   const [showModal, setShowModal] = React.useState(false);
   // setFilteredStudios(studios.filter(studio => studio.options[]))
   //
