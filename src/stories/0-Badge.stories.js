@@ -11,9 +11,9 @@ const FlexContainer = styled.div`
   flex-direction: column;
 `;
 
-export const Active = () => <Badge>Courses</Badge>;
+export const Active = () => <Badge active>Courses</Badge>;
 
-export const Inactive = () => <Badge active={false}>Wellnes</Badge>;
+export const Inactive = () => <Badge>Wellnes</Badge>;
 
 export const ListetVertical = () => (
   <FlexContainer>
@@ -30,3 +30,13 @@ export const ListetHorizontal = () => (
     <Badge>Wellnes</Badge>
   </>
 );
+
+export const Controlled = () => {
+  const [active, setActive] = React.useState(true);
+
+  return (
+    <Badge active={active} onClick={() => setActive(!active)}>
+      Click me
+    </Badge>
+  );
+};

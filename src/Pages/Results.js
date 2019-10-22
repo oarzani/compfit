@@ -26,13 +26,32 @@ const FilterSection = styled.section`
   margin-bottom: 10px;
 `;
 
-export default function MainPage({ studio }) {
-  // To-Do: State der besteht aus filteredStudios setFilteredStudios
+export default function Results() {
   const [filteredStudios, setFilteredStudios] = React.useState(studios);
+
+  // function handleFilterChange(name, value) {
+  //   const newFilters = { ...filters };
+  //   if (value) {
+  //     newFilters[name] = value;
+  //   } else {
+  //     delete newFilters[name];
+  //   }
+  //   setFilters(newFilters);
+  // }
+  const [activeOptions, setActiveOptions] = React.useState({});
+  console.log(activeOptions);
+
   const [showModal, setShowModal] = React.useState(false);
+  // setFilteredStudios(studios.filter(studio => studio.options[]))
+  //
   return (
     <>
-      {showModal && <Modal handleClickEvent={() => setShowModal(false)} />}
+      {showModal && (
+        <Modal
+          activeOptions={activeOptions}
+          handleClickEvent={() => setShowModal(false)}
+        />
+      )}
       <Header />
 
       <Main>

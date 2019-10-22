@@ -11,7 +11,6 @@ const List = styled.section`
   background: transparent;
 `;
 
-// Mapping happens in this file//
 export default function StudioList({ studios }) {
   return (
     <List>
@@ -21,17 +20,3 @@ export default function StudioList({ studios }) {
     </List>
   );
 }
-
-// export default function LibraryContainer(children) {
-//   return (
-//     <>
-//       {games.map((game, index) => {
-//         return (
-//           <ListContainerBorder game={game}>
-//             <Game key={game.title} game={game} />
-//           </ListContainerBorder>
-//         );
-//       })}
-
-//       <UpdateNotification />
-//     </>

@@ -49,11 +49,13 @@ export default function Modal({
   children,
   show = true,
   hideBackdrop,
-  onClose,
-  onAccept,
-  handleClickEvent,
-  option
+  handleClickEvent
 }) {
+  // const [activeOptions, setActiveOptions] = React.useState({
+  //   Wellness: true
+  // });
+  // console.log(activeOptions);
+
   return (
     <>
       <Container show={show}>
@@ -65,24 +67,37 @@ export default function Modal({
         <Title>Select Folowing</Title>
         <BadgeContainer>
           {StudioOptions.map(option => {
-            return <Badge option={option}>{option}</Badge>;
+            return (
+              <Badge
+                key={option}
+                active={!!activeOptions[option]}
+                onClick={() =>
+                  setActiveOptions({
+                    ...activeOptions,
+                    [option]: !activeOptions[option]
+                  })
+                }
+              >
+                {option}
+              </Badge>
+            );
           })}
         </BadgeContainer>
         <Line />
         <Title>Select Neighborhood(s)</Title>
         <BadgeContainer>
           {NeighbourhoodOptions.map(option => {
-            return <Badge option={option}>{option}</Badge>;
+            return <Badge key={option}>{option}</Badge>;
           })}
         </BadgeContainer>
         <ClosingDiv>
           <CloseButton onClick={handleClickEvent} />
         </ClosingDiv>
         <SubmitButton>
-          <ApplyButton onClick={onAccept} />
+          <ApplyButton onClick={handleClickEvent} />
         </SubmitButton>
       </Container>
-      {!hideBackdrop && <Backdrop onClick={onClose} show={show} />}
+      {!hideBackdrop && <Backdrop onClick={handleClickEvent} show={show} />}
     </>
   );
 }
