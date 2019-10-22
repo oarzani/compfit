@@ -4,7 +4,7 @@ import DurationBar from "../components/DurationBar";
 import RangeBar from "../components/RangeBar";
 import { action } from "@storybook/addon-actions";
 
-import MainPage from "../Pages/MainPage";
+import Results from "../Pages/Results";
 import ShowModal from "../components/Modal";
 
 export default {
@@ -34,7 +34,7 @@ export function Hide() {
 
 export const Test = () => (
   <>
-    <MainPage />
+    <Results />
   </>
 );
 

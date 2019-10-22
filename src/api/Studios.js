@@ -9,13 +9,17 @@ export const studios = [
     wellness: ["Spa", "Sauna"],
     cardio: ["Rowing", "Stepper"],
     strength: ["Hanteln", "Geräte"],
-    ladyarea: true,
-    personaltraining: false,
+
     neighbourhood: "Ehrenfeld",
     adress: "Venloer Str. 389 50825 Köln",
     website: "https://www.fitnessfirst.de/clubs/koeln-ehrenfeld",
     imgLocation: "",
-    city: "Köln"
+    city: "Köln",
+    options: {
+      ladyarea: true,
+      personaltraining: false,
+      cardio: true
+    }
   },
   {
     imageLogo: "src",
@@ -40,7 +44,12 @@ export const studios = [
     adress: "Eigelstein 80-88 50668 Köln",
     website: "https://fitnessloft.de/fitnessstudios/koeln/",
     imgLocation: "src",
-    city: "Köln"
+    city: "Köln",
+    options: {
+      ladyarea: true,
+      personaltraining: false,
+      cardio: false
+    }
   },
   {
     imageLogo: "src",

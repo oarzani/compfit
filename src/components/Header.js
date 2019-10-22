@@ -8,7 +8,7 @@ const HeaderDiv = styled.header`
   width: 100%;
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 const Headline = styled.h1`
@@ -19,13 +19,14 @@ const Headline = styled.h1`
 `;
 
 const StyledBackInWhite = styled(BackInWhite)`
-  justify-self: left;
+  margin-left: 20px;
 `;
 export default function Header({ active = true }) {
   return (
     <HeaderDiv>
       {active && <StyledBackInWhite />}
       <Headline>CompFit</Headline>
+      <span></span>
     </HeaderDiv>
   );
 }

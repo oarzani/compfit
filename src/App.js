@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Start from "./Pages/Start";
-import MainPage from "./Pages/MainPage";
+
+import Results from "./Pages/Results";
 
 const Container = styled.div`
   width: 100vw;
@@ -16,7 +17,7 @@ function App() {
     <Container>
       <Router>
         <Route exact path="/" component={Start} />
-        <Route exact path="/results" component={MainPage} />
+        <Route exact path="/results" component={Results} />
       </Router>
     </Container>
   );
