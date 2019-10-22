@@ -35,11 +35,10 @@ export const studios = [
       "Boxen",
       "Bauch Beine Po"
     ],
-    wellnes: ["Sauna"],
+    wellness: ["Sauna"],
     cardio: ["Laufband", "Stepper", "Crosstrainer", "Fahrad-Ergometer"],
     strength: ["Kraftgeräte", "Hantelbereich"],
-    ladyarea: true,
-    personaltraining: true,
+
     neighbourhood: ["Altstadt-Nord"],
     adress: "Eigelstein 80-88 50668 Köln",
     website: "https://fitnessloft.de/fitnessstudios/koeln/",
@@ -47,8 +46,11 @@ export const studios = [
     city: "Köln",
     options: {
       ladyarea: true,
-      personaltraining: false,
-      cardio: false
+      personaltraining: true,
+      cardio: true,
+      wellnes: true,
+      strength: true,
+      courses: true
     }
   },
   {
@@ -69,7 +71,15 @@ export const studios = [
     website:
       "https://www.mcfit.com/de/studios/studiosuche/studiodetails/studio/koeln-altstadt/",
     imgLocation: "",
-    city: "Köln"
+    city: "Köln",
+    options: {
+      ladyarea: true,
+      personaltraining: false,
+      cardio: true,
+      wellnes: true,
+      strength: true,
+      courses: true
+    }
   },
   {
     imageLogo: "src",
@@ -88,13 +98,20 @@ export const studios = [
       "Ruder-Ergometer"
     ],
     strength: ["Hantelbereich", "Zirkeltraining", "Kraftgeräte"],
-    ladyarea: true,
-    personaltraining: true,
+
     neighbourhood: ["Altstadt-Nord", "Innenstadt"],
     adress: "Gürzenichstraße 6 50667 Köln",
     website: "http://holmesplace.de/am-guerzenich.c/de/",
     imgLocation: "",
-    city: "Köln"
+    city: "Köln",
+    options: {
+      ladyarea: true,
+      personaltraining: true,
+      cardio: true,
+      wellnes: true,
+      strength: true,
+      courses: true
+    }
   },
   {
     imageLogo: "src",
@@ -106,13 +123,20 @@ export const studios = [
     wellnes: ["Entspannungsraum", "Massagen", "Sauna"],
     cardio: ["Laufband", "Ruder-Ergometer", "Fahrradergometer"],
     strength: ["Hantelbereich", "Kraftgeräte", "Zirkeltraining"],
-    ladyarea: false,
-    personaltraining: false,
+
     neighbourhood: ["Innenstadt"],
     adress: "Mittelstraße 12, 50672 Köln",
     website: "https://www.bushido-fitness.de/",
     imgLocation: "",
-    city: "Köln"
+    city: "Köln",
+    options: {
+      ladyarea: false,
+      personaltraining: true,
+      cardio: true,
+      wellnes: true,
+      strength: true,
+      courses: true
+    }
   },
   {
     imageLogo: "src",
@@ -131,13 +155,20 @@ export const studios = [
       "Ruder-Ergometer"
     ],
     strength: ["Hantelbereich", "Kraftgeräte", "Zirkeltraining"],
-    ladyarea: true,
-    personaltraining: true,
+
     neighbourhood: ["Ehrenfeld"],
     adress: "Maarweg 149-152 50825 Köln",
     website: "http://art-of-fitness.de/",
     imgLocation: "",
-    city: "Köln"
+    city: "Köln",
+    options: {
+      ladyarea: true,
+      personaltraining: true,
+      cardio: false,
+      wellnes: true,
+      strength: true,
+      courses: true
+    }
   },
 
   {
@@ -166,13 +197,20 @@ export const studios = [
       "Ruder-Ergometer"
     ],
     strength: ["Hantelbereich", "Kraftgeräte"],
-    ladyarea: true,
-    personaltraining: true,
+
     neighbourhood: ["Innenstadt"],
     adress: "Schildergasse 94 50667 Köln",
     website: "http://www.fitnessfirst.de/clubs/koeln-innenstadt-schildergasse/",
     imgLocation: "",
-    city: "Köln"
+    city: "Köln",
+    options: {
+      ladyarea: true,
+      personaltraining: true,
+      cardio: true,
+      wellness: true,
+      strength: true,
+      courses: true
+    }
   },
   {
     imageLogo: "src",
@@ -197,13 +235,20 @@ export const studios = [
       "Ruder-Ergometer"
     ],
     strength: ["Hantelbereich", "Kraftgeräte", "Zirkeltraining"],
-    ladyarea: true,
-    personaltraining: true,
+
     neighbourhood: ["Altstadt-Süd"],
     adress: "Hohenstaufenring 30-32, 50674 Köln",
     website:
       "https://www.justfit-clubs.de/just-fit-13-city-koeln-altstadt-sued.html",
     imgLocation: "",
-    city: "Köln"
+    city: "Köln",
+    options: {
+      ladyarea: true,
+      personaltraining: true,
+      cardio: true,
+      wellnes: true,
+      strength: true,
+      courses: true
+    }
   }
 ];
