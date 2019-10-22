@@ -52,10 +52,7 @@ export default function Accordion({ title, content }) {
             <OpenAccordion />
           </Arrow>
         </AccordionDiv>
-        <Content show={toggleContent}>
-          Mama macht guten Salat {content}
-          <h1>Hallo</h1>
-        </Content>
+        <Content show={toggleContent}>TestContent {content}</Content>
       </AccordionWrapper>
     </>
   );
