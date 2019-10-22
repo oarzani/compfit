@@ -23,8 +23,17 @@ const BadgeDiv = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 `;
 
-export default function Badge({ active = true, children }) {
-  return <BadgeDiv active={active}>{children}</BadgeDiv>;
+export default function Badge({ active = false, children }) {
+  const [activeBadge, setActiveBadge] = React.useState(false);
+  console.log(activeBadge);
+  function handleClick() {
+    setActiveBadge(!activeBadge);
+  }
+  return (
+    <BadgeDiv onClick={handleClick} active={activeBadge}>
+      {children}
+    </BadgeDiv>
+  );
 }
 
 Badge.propTypes = {

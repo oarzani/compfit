@@ -4,9 +4,8 @@ import { SecondSearchbar } from "../components/SearchCityBarGrey";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import { studios } from "../api/Studios";
+import { studios } from "../api/studios";
 import Modal from "../components/Modal";
-import { Show } from "../stories/6-Modal.stories";
 
 const Main = styled.main`
   display: flex;
@@ -33,7 +32,7 @@ export default function MainPage({ studio }) {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
-      {showModal && <Show handleClickEvent={() => setShowModal(false)} />}
+      {showModal && <Modal handleClickEvent={() => setShowModal(false)} />}
       <Header />
 
       <Main>

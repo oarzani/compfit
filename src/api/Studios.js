@@ -99,7 +99,7 @@ export const studios = [
     strength: ["Hantelbereich", "Kraftgeräte", "Zirkeltraining"],
     ladyarea: false,
     personaltraining: false,
-    neighbourhood: ["Innestadt"],
+    neighbourhood: ["Innenstadt"],
     adress: "Mittelstraße 12, 50672 Köln",
     website: "https://www.bushido-fitness.de/",
     imgLocation: "",
