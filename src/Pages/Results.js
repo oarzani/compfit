@@ -29,6 +29,8 @@ const FilterSection = styled.section`
 export default function Results() {
   const [filteredStudios, setFilteredStudios] = React.useState(studios);
 
+  //
+
   // function handleFilterChange(name, value) {
   //   const newFilters = { ...filters };
   //   if (value) {
@@ -41,8 +43,6 @@ export default function Results() {
   const [activeOptions, setActiveOptions] = React.useState({});
   console.log(activeOptions);
 
-  function handleActiveOptions(key) {}
-
   const [showModal, setShowModal] = React.useState(false);
   // setFilteredStudios(studios.filter(studio => studio.options[]))
   //
@@ -51,6 +51,7 @@ export default function Results() {
       {showModal && (
         <Modal
           activeOptions={activeOptions}
+          setActiveOptions={setActiveOptions}
           handleClickEvent={() => setShowModal(false)}
         />
       )}

@@ -21,6 +21,7 @@ const BadgeDiv = styled.div`
   margin: 5px;
   max-width: fit-content;
   font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
 `;
 
 export default function Badge({ active, children, onClick }) {

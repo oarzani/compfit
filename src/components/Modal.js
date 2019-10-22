@@ -49,12 +49,12 @@ export default function Modal({
   children,
   show = true,
   hideBackdrop,
-  handleClickEvent
+  handleClickEvent,
+  activeOptions,
+  setActiveOptions
 }) {
-  const [activeOptions, setActiveOptions] = React.useState({
-    Wellness: true
-  });
-  console.log(activeOptions);
+  // const [activeOptions, setActiveOptions] = React.useState({});
+  // console.log(activeOptions);
 
   return (
     <>
@@ -87,7 +87,20 @@ export default function Modal({
         <Title>Select Neighborhood(s)</Title>
         <BadgeContainer>
           {NeighbourhoodOptions.map(option => {
-            return <Badge key={option}>{option}</Badge>;
+            return (
+              <Badge
+                key={option}
+                active={!!activeOptions[option]}
+                onClick={() =>
+                  setActiveOptions({
+                    ...activeOptions,
+                    [option]: !activeOptions[option]
+                  })
+                }
+              >
+                {option}
+              </Badge>
+            );
           })}
         </BadgeContainer>
         <ClosingDiv>
