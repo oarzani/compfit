@@ -17,10 +17,17 @@ const GreySearchbar = styled.input`
   padding-left: 10px;
 `;
 
-export function SecondSearchbar({ onChange }) {
+export function SecondSearchbar({ onSearch }) {
+  function handleInputChange(event) {
+    const value = event.target.value;
+    onSearch(value);
+  }
   return (
     <WrappSearchBar>
-      <GreySearchbar placeholder="type diffrent city..." onChange={onChange} />
+      <GreySearchbar
+        placeholder="type diffrent city..."
+        onChange={handleInputChange}
+      />
     </WrappSearchBar>
   );
 }

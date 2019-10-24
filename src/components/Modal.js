@@ -7,10 +7,10 @@ import DurationBar from "./DurationBar";
 import RangeBar from "./RangeBar";
 import Badge from "./Badge";
 import { StudioOptions, NeighbourhoodOptions } from "../api/filters";
+import { studios } from "../api/Studios";
 
 const Container = styled.div`
   background: white;
-  box-shadow: 0 0 10px ${props => props.theme.shadow};
   border-radius: 10px;
   display: ${props => (props.show ? "flex" : "none")};
   flex-direction: column;
@@ -45,76 +45,6 @@ const Backdrop = styled.div`
   z-index: 10;
 `;
 
-export default function Modal({
-  children,
-  show = true,
-  hideBackdrop,
-  handleClickEvent,
-  activeOptions,
-  setActiveOptions
-}) {
-  // const [activeOptions, setActiveOptions] = React.useState({});
-  // console.log(activeOptions);
-
-  return (
-    <>
-      <Container show={show}>
-        <Title>Choose Contract Duration</Title>
-        <DurationBar />
-        <Title>Choose Price</Title>
-        <RangeBar />
-        <Line />
-        <Title>Select Folowing</Title>
-        <BadgeContainer>
-          {StudioOptions.map(option => {
-            return (
-              <Badge
-                key={option}
-                active={!!activeOptions[option]}
-                onClick={() =>
-                  setActiveOptions({
-                    ...activeOptions,
-                    [option]: !activeOptions[option]
-                  })
-                }
-              >
-                {option}
-              </Badge>
-            );
-          })}
-        </BadgeContainer>
-        <Line />
-        <Title>Select Neighborhood(s)</Title>
-        <BadgeContainer>
-          {NeighbourhoodOptions.map(option => {
-            return (
-              <Badge
-                key={option}
-                active={!!activeOptions[option]}
-                onClick={() =>
-                  setActiveOptions({
-                    ...activeOptions,
-                    [option]: !activeOptions[option]
-                  })
-                }
-              >
-                {option}
-              </Badge>
-            );
-          })}
-        </BadgeContainer>
-        <ClosingDiv>
-          <CloseButton onClick={handleClickEvent} />
-        </ClosingDiv>
-        <SubmitButton>
-          <ApplyButton onClick={handleClickEvent} />
-        </SubmitButton>
-      </Container>
-      {!hideBackdrop && <Backdrop onClick={handleClickEvent} show={show} />}
-    </>
-  );
-}
-
 const BadgeContainer = styled.div`
   width: 80%;
   display: flex;
@@ -132,6 +62,125 @@ const Line = styled.hr`
   color: grey;
   width: 80%;
 `;
+
+export default function Modal({
+  children,
+  show = true,
+  hideBackdrop,
+  handleClickEvent,
+  activeOptions,
+  setActiveOptions,
+  badgeClick
+}) {
+  // function handleClickOnBadge ()
+
+  const badgeKeys = Object.keys(activeOptions);
+
+  return (
+    <>
+      <Container show={show}>
+        <Title>Choose Contract Duration</Title>
+        <DurationBar />
+        <Title>Choose Price</Title>
+        <RangeBar />
+        <Line />
+        <Title>Select Folowing</Title>
+        <BadgeContainer>
+          <Badge
+            name={badgeKeys[0]}
+            active={activeOptions[badgeKeys[0]]}
+            badgeClick={badgeClick}
+          ></Badge>
+          <Badge
+            name={badgeKeys[1]}
+            active={activeOptions[badgeKeys[1]]}
+            badgeClick={badgeClick}
+          />
+
+          <Badge
+            name={badgeKeys[2]}
+            active={activeOptions[badgeKeys[2]]}
+            badgeClick={badgeClick}
+          />
+
+          <Badge
+            name={badgeKeys[3]}
+            active={activeOptions[badgeKeys[3]]}
+            badgeClick={badgeClick}
+          />
+
+          {/* <Badge
+            key={strength}
+            active={activeOptions[strength]}
+            onClick={() =>
+              setActiveOptions({
+                ...activeOptions,
+                [strength]: !activeOptions[strength]
+              })
+            }
+          >
+            Strength
+          </Badge>
+          <Badge
+            key={wellness}
+            active={activeOptions[wellness]}
+            onClick={() =>
+              setActiveOptions({
+                ...activeOptions,
+                [wellness]: !activeOptions[wellness]
+              })
+            }
+          >
+            Wellness
+          </Badge> */}
+          {/* {StudioOptions.map(option => {
+            return (
+              <Badge
+                key={option}
+                active={!!activeOptions[option]}
+                onClick={() =>
+                  setActiveOptions({
+                    ...activeOptions,
+                    [option]: !activeOptions[option]
+                  })
+                }
+              >
+                {option}
+              </Badge>
+            );
+          })} */}
+        </BadgeContainer>
+        <Line />
+        <Title>Select Neighborhood(s)</Title>
+        {/* <BadgeContainer>
+          {NeighbourhoodOptions.map(option => {
+            return (
+              <Badge
+                key={option}
+                active={!!activeOptions[option]}
+                onClick={() =>
+                  setActiveOptions({
+                    ...activeOptions,
+                    [option]: !activeOptions[option]
+                  })
+                }
+              >
+                {option}
+              </Badge>
+            );
+          })}
+        </BadgeContainer> */}
+        <ClosingDiv>
+          <CloseButton onClick={handleClickEvent} />
+        </ClosingDiv>
+        <SubmitButton>
+          <ApplyButton onClick={handleClickEvent} />
+        </SubmitButton>
+      </Container>
+      {!hideBackdrop && <Backdrop onClick={handleClickEvent} show={show} />}
+    </>
+  );
+}
 
 Modal.propTypes = {
   children: PropTypes.node,

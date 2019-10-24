@@ -38,7 +38,7 @@ export default function CardElementText({ name, price, adress, duration }) {
   return (
     <Wrapper>
       <StudioName>{name}</StudioName>
-      <MonthlyPrice>{`Preis Monatlich: ${price} €`}</MonthlyPrice>
+      <MonthlyPrice>{`Preis Monatlich:  ${price}  €`}</MonthlyPrice>
       <Duration>{`Vertragslaufzeit: ${duration} Monate`}</Duration>
       <Adress>{adress}</Adress>
     </Wrapper>

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import { SecondSearchbar } from "../components/SearchCityBarGrey";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import { studios } from "../api/studios";
+import getStudioByFilters, { studios } from "../api/Studios";
 import Modal from "../components/Modal";
 
 const Main = styled.main`
@@ -26,26 +26,48 @@ const FilterSection = styled.section`
   margin-bottom: 10px;
 `;
 
+const NumberOfResults = styled.h3`
+  font-family: Arial, Helvetica, sans-serif;
+`;
+
 export default function Results() {
-  const [filteredStudios, setFilteredStudios] = React.useState(studios);
-
-  //
-
-  // function handleFilterChange(name, value) {
-  //   const newFilters = { ...filters };
-  //   if (value) {
-  //     newFilters[name] = value;
-  //   } else {
-  //     delete newFilters[name];
-  //   }
-  //   setFilters(newFilters);
+  // Suche:
+  // const [search, setSearch] = useState("");
+  // const FilteredByCity = studios.filter(studio =>
+  //   studio.city.toLowerCase().includes(search.toLowerCase())
+  // );
+  // function handleSearchCity(value) {
+  //   setSearch(value);
   // }
-  const [activeOptions, setActiveOptions] = React.useState({});
-  console.log(activeOptions);
+
+  const [activeOptions, setActiveOptions] = React.useState({
+    cardio: false,
+    courses: false,
+    ladyarea: false,
+    strength: false,
+    personaltraining: false,
+    wellness: false
+  });
+
+  const [filteredStudios, setFilteredStudios] = useState(studios);
+
+  useEffect(() => {
+    setFilteredStudios(getStudioByFilters(activeOptions));
+  }, [activeOptions]);
+
+  //Hilfe:
+
+  function handleOptionsChange(name, value) {
+    let newOptions = { ...activeOptions };
+
+    newOptions[name] = !value;
+
+    setActiveOptions(newOptions);
+    console.log(name, value);
+  }
 
   const [showModal, setShowModal] = React.useState(false);
-  // setFilteredStudios(studios.filter(studio => studio.options[]))
-  //
+
   return (
     <>
       {showModal && (
@@ -53,17 +75,24 @@ export default function Results() {
           activeOptions={activeOptions}
           setActiveOptions={setActiveOptions}
           handleClickEvent={() => setShowModal(false)}
+          badgeClick={handleOptionsChange}
         />
       )}
       <Header />
 
       <Main>
         <FilterSection>
-          <SecondSearchbar />
+          <SecondSearchbar
+          // onChange={event => handleInputChange(event.target.value)}
+          // handleInputChange={setSearch}
+          // onSearch={handleSearchCity}
+          />
           <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
+        <NumberOfResults>`Results ${}`</NumberOfResults>
+
         <StudioList studios={filteredStudios} />
-        {/* In das Studio List filteredStudios={filteredStudios} */}
+        {/*Hilfe In das Studio List filteredStudios={filteredStudios} */}
       </Main>
     </>
   );
