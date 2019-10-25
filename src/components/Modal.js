@@ -6,8 +6,6 @@ import PropTypes from "prop-types";
 import DurationBar from "./DurationBar";
 import RangeBar from "./RangeBar";
 import Badge from "./Badge";
-import { StudioOptions, NeighbourhoodOptions } from "../api/filters";
-import { studios } from "../api/Studios";
 
 const Container = styled.div`
   background: white;
@@ -109,46 +107,17 @@ export default function Modal({
             badgeClick={badgeClick}
           />
 
-          {/* <Badge
-            key={strength}
-            active={activeOptions[strength]}
-            onClick={() =>
-              setActiveOptions({
-                ...activeOptions,
-                [strength]: !activeOptions[strength]
-              })
-            }
-          >
-            Strength
-          </Badge>
           <Badge
-            key={wellness}
-            active={activeOptions[wellness]}
-            onClick={() =>
-              setActiveOptions({
-                ...activeOptions,
-                [wellness]: !activeOptions[wellness]
-              })
-            }
-          >
-            Wellness
-          </Badge> */}
-          {/* {StudioOptions.map(option => {
-            return (
-              <Badge
-                key={option}
-                active={!!activeOptions[option]}
-                onClick={() =>
-                  setActiveOptions({
-                    ...activeOptions,
-                    [option]: !activeOptions[option]
-                  })
-                }
-              >
-                {option}
-              </Badge>
-            );
-          })} */}
+            name={badgeKeys[4]}
+            active={activeOptions[badgeKeys[4]]}
+            badgeClick={badgeClick}
+          />
+
+          <Badge
+            name={badgeKeys[5]}
+            active={activeOptions[badgeKeys[5]]}
+            badgeClick={badgeClick}
+          />
         </BadgeContainer>
         <Line />
         <Title>Select Neighborhood(s)</Title>

@@ -25,6 +25,7 @@ export default function Header({ active = true }) {
   return (
     <HeaderDiv>
       {active && <StyledBackInWhite />}
+      {!active && <span></span>}
       <Headline>CompFit</Headline>
       <span></span>
     </HeaderDiv>

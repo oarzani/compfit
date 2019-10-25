@@ -11,6 +11,7 @@ const BadgeDiv = styled.div`
       ? css`
           background: rgb(78, 203, 224);
           color: rgb(255, 255, 255);
+          border: solid 1px;
         `
       : css`
           background: rgb(255, 255, 255);

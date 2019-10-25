@@ -55,8 +55,6 @@ export default function Results() {
     setFilteredStudios(getStudioByFilters(activeOptions));
   }, [activeOptions]);
 
-  //Hilfe:
-
   function handleOptionsChange(name, value) {
     let newOptions = { ...activeOptions };
 
@@ -78,7 +76,7 @@ export default function Results() {
           badgeClick={handleOptionsChange}
         />
       )}
-      <Header />
+      <Header active={false} />
 
       <Main>
         <FilterSection>
@@ -89,10 +87,9 @@ export default function Results() {
           />
           <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
-        <NumberOfResults>`Results ${}`</NumberOfResults>
+        <NumberOfResults>Results {filteredStudios.length}</NumberOfResults>
 
         <StudioList studios={filteredStudios} />
-        {/*Hilfe In das Studio List filteredStudios={filteredStudios} */}
       </Main>
     </>
   );

@@ -9,7 +9,7 @@ const WrappSearchBar = styled.form`
 const SearchBar = styled.input`
   background: #fff;
   width: 100%;
-  height: 30px;
+  /* min-height: 30px; */
   font-size: 16pt;
 
   padding-left: 10px;
