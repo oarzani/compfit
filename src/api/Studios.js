@@ -3,7 +3,7 @@ export const studios = [
     imageLogo: "src",
     imgDetail: "src",
     name: "Fittness First Eherenfeld",
-    price: ["40"],
+    price: [40],
     duration: ["24"],
     courses: ["Zumba", "Yoga", "Body-Pump"],
     wellness: ["Spa", "Sauna"],
@@ -16,9 +16,12 @@ export const studios = [
     imgLocation: "",
     city: "Köln",
     options: {
-      ladyarea: true,
-      personaltraining: false,
-      cardio: true
+      ladyarea: false,
+      personaltraining: true,
+      cardio: true,
+      wellnes: true,
+      strength: true,
+      courses: true
     }
   },
   {
@@ -45,7 +48,7 @@ export const studios = [
     imgLocation: "src",
     city: "Köln",
     options: {
-      ladyarea: true,
+      ladyarea: false,
       personaltraining: true,
       cardio: true,
       wellnes: true,
@@ -57,7 +60,7 @@ export const studios = [
     imageLogo: "src",
     imgDetail: "src",
     name: "Mc Fit Altstadt",
-    price: ["19.90"],
+    price: [19.9],
     duration: ["24"],
 
     courses: ["CyberKurse", "Crossworkout", "Pre-Running", "Spinning"],
@@ -85,7 +88,7 @@ export const studios = [
     imageLogo: "src",
     imgDetail: "src",
     name: "Holmes Place am Gürzenich",
-    price: ["89.90", "74.9", "64.9"],
+    price: [89.9, 74.9, 64.9],
     duration: ["flex", "12", "24"],
     courses: ["Yoga", "Bodypump", "Aerobic", "TaiChi", "Zumba", "Bodycombat"],
     wellnes: ["Pool", "Sauna", "Spa", "Solarium", "Massage"],
@@ -117,7 +120,7 @@ export const studios = [
     imageLogo: "src",
     imgDetail: "src",
     name: "Bushido Fitness",
-    price: ["58", "53", "48"],
+    price: [58, 53, 48],
     duration: ["6", "12", "24"],
     courses: ["Bodypup", "Yin-Yoga", "Pilates", "RehaRüclen"],
     wellnes: ["Entspannungsraum", "Massagen", "Sauna"],
@@ -142,7 +145,7 @@ export const studios = [
     imageLogo: "src",
     imgDetail: "src",
     name: "Art of Fitness",
-    price: ["39.90", "29.90", "24.90"],
+    price: [39.9, 29.9, 24.9],
     duration: ["flex", "6", "12"],
     courses: ["Yoga", "Bodypump", "Aerobic", "TaiChi", "Zumba", "Bodycombat"],
     wellnes: ["Sauna", "Solarium", "Spa"],
@@ -162,7 +165,7 @@ export const studios = [
     imgLocation: "",
     city: "Köln",
     options: {
-      ladyarea: true,
+      ladyarea: false,
       personaltraining: true,
       cardio: false,
       wellnes: true,
@@ -175,7 +178,7 @@ export const studios = [
     imageLogo: "src",
     imgDetail: "src",
     name: "Fittness First-Innenstadt",
-    price: ["40"],
+    price: [40],
     duration: ["24"],
 
     courses: [
@@ -216,7 +219,7 @@ export const studios = [
     imageLogo: "src",
     imgDetail: "src",
     name: "Just Fit 13",
-    price: ["75", "55", "45"],
+    price: [75, 55, 45],
     duration: ["flex", "12", "24"],
     courses: [
       "Yoga",
@@ -243,7 +246,7 @@ export const studios = [
     imgLocation: "",
     city: "Köln",
     options: {
-      ladyarea: true,
+      ladyarea: false,
       personaltraining: true,
       cardio: true,
       wellnes: true,
@@ -252,3 +255,46 @@ export const studios = [
     }
   }
 ];
+
+// Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
+export default function getStudioByFilters(activeOptions) {
+  return studios.filter(studio => {
+    if (activeOptions.ladyarea) {
+      if (studio.options.ladyarea === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.cardio) {
+      if (studio.options.cardio === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.courses) {
+      if (studio.options.courses === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.welness) {
+      if (studio.options.welness === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.personaltraining) {
+      if (studio.options.personaltraining === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.strength) {
+      if (studio.options.strength === true) {
+        return true;
+      }
+      return false;
+    }
+    return false;
+  });
+}

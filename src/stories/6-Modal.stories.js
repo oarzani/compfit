@@ -1,6 +1,5 @@
 import React from "react";
-
-import Modal from "../components/Modal";
+import Results from "../Pages/Results";
 
 export default {
   title: "Modal"
@@ -8,11 +7,6 @@ export default {
 
 export const FinalModal = () => (
   <>
-    <Modal />
+    <Results />
   </>
 );
-
-// //
-// {showModal && (
-//   <CardModal handleOutsideClick={() => setShowModal(false)} />
-// )}

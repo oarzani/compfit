@@ -11,6 +11,7 @@ const BadgeDiv = styled.div`
       ? css`
           background: rgb(78, 203, 224);
           color: rgb(255, 255, 255);
+          border: solid 1px;
         `
       : css`
           background: rgb(255, 255, 255);
@@ -24,10 +25,14 @@ const BadgeDiv = styled.div`
   cursor: pointer;
 `;
 
-export default function Badge({ active, children, onClick }) {
+export default function Badge({ name, active, badgeClick }) {
+  function handleClick(name, active) {
+    badgeClick(name, active);
+  }
+
   return (
-    <BadgeDiv onClick={onClick} active={active}>
-      {children}
+    <BadgeDiv onClick={() => handleClick(name, active)} active={active}>
+      {name[0].toUpperCase() + name.slice(1)}
     </BadgeDiv>
   );
 }
