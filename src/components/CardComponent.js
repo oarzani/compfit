@@ -12,13 +12,18 @@ const CardWrapper = styled.article`
   border-radius: 2em;
   border: 3px solid rgb(110, 94, 94);
   padding: 10px;
+  max-height: 200px;
 `;
 
 //To-Do: Link property to Details
-export default function CardComponent({ studio }) {
+export default function CardComponent({ studio, name }) {
   return (
     <CardWrapper>
-      <CardElementPic imageLogo={studio.imageLogo} />
+      <CardElementPic
+        imageLogo={studio.imageLogo}
+        name={studio.name}
+        cardio={studio.cardio}
+      />
       <CardElementText
         name={studio.name}
         price={studio.price}

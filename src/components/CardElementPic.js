@@ -1,30 +1,40 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { studios } from "../api/Studios";
 
 const PicWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background: white;
   margin: 10px 20px;
-  width: 40%;
+  width: 150px;
 `;
 // height used to be 90vh before.
-const StyledImageDiv = styled.div`
-  height: 80%;
+const StyledImageDiv = styled.img`
+  height: 150px;
+  /* object-fit: cover; */
+  object-position: top center;
 `;
 
-const Details = styled.p`
+const StyledLink = styled(Link)`
   color: #4ecbe0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12pt;
 `;
-
-export default function CardElementPic({ imageLogo, link }) {
+//Show
+export default function CardElementPic({ studio, imageLogo, name, match }) {
+  // const studio = studios.find(
+  //   studio => studio.name === match.params.studioName
+  // );
   return (
     <PicWrapper>
-      <StyledImageDiv>{imageLogo}</StyledImageDiv>
-      <Details>{`Details ${link}`}</Details>
+      {/* Das DIv unten zum Image ändern, weil ja eine source weitergegeben wird */}
+      <StyledImageDiv src={imageLogo} alt={name} />
+      <StyledLink studio={studio} to={`/results/${name}`}>
+        Details
+      </StyledLink>
     </PicWrapper>
   );
 }

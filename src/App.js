@@ -5,6 +5,7 @@ import Start from "./Pages/Start";
 import GlobalStyle from "../src/components/GlobalStyle";
 
 import Results from "./Pages/Results";
+import Details from "./Pages/Details";
 
 const Container = styled.div`
   width: 100vw;
@@ -21,6 +22,7 @@ function App() {
         <Router>
           <Route exact path="/" component={Start} />
           <Route exact path="/results" component={Results} />
+          <Route path="/results/:studioName" component={Details} />
         </Router>
       </Container>
     </>
