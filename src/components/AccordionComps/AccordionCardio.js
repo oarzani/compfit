@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import OpenAccordion from "./icons/OpenAccordion";
+import OpenAccordion from "../icons/OpenAccordion";
 
 const AccordionWrapper = styled.div`
   width: 100%;
@@ -36,10 +36,11 @@ const Arrow = styled.div`
   /* margin-left: 100px; */
 `;
 
-export default function Accordion({ title, content }) {
+export default function AccordionCardio({ cardio }) {
   const [toggleContent, setToggleContent] = useState(false);
 
   console.log(toggleContent);
+  console.log(cardio);
   function handleClick() {
     setToggleContent(!toggleContent);
   }
@@ -47,12 +48,12 @@ export default function Accordion({ title, content }) {
     <>
       <AccordionWrapper>
         <AccordionDiv onClick={handleClick}>
-          {title} Kurse
+          Cardio
           <Arrow show={toggleContent}>
             <OpenAccordion />
           </Arrow>
         </AccordionDiv>
-        <Content show={toggleContent}>TestContent {content}</Content>
+        <Content show={toggleContent}>{cardio}</Content>
       </AccordionWrapper>
     </>
   );

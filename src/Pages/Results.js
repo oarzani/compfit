@@ -30,7 +30,7 @@ const NumberOfResults = styled.h3`
   font-family: Arial, Helvetica, sans-serif;
 `;
 
-export default function Results() {
+export default function Results(history) {
   // Suche:
   // const [search, setSearch] = useState("");
   // const FilteredByCity = studios.filter(studio =>
@@ -48,6 +48,7 @@ export default function Results() {
     personaltraining: false,
     wellness: false
   });
+  console.log(history);
 
   const [filteredStudios, setFilteredStudios] = useState(studios);
 
