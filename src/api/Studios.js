@@ -78,8 +78,7 @@ export const studios = [
     wellnes: [],
     cardio: ["Stepper", "Rudern", "Crosstrainer"],
     strength: ["Hantelbereich", "Kraftgeräte", "Zirkeltraining"],
-    ladyarea: true,
-    personaltraining: false,
+
     neighbourhood: ["Innenstadt"],
     adress: "Hohe Str. 62-68 50667 Köln",
     website:
@@ -91,7 +90,7 @@ export const studios = [
       ladyarea: true,
       personaltraining: false,
       cardio: true,
-      wellnes: true,
+      wellnes: false,
       strength: true,
       courses: true
     },

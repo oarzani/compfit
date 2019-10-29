@@ -24,16 +24,22 @@ const StyledLink = styled(Link)`
   font-size: 12pt;
 `;
 //Show
-export default function CardElementPic({ studio, imageLogo, name, match }) {
-  // const studio = studios.find(
-  //   studio => studio.name === match.params.studioName
-  // );
+export default function CardElementPic({
+  studio,
+  imageLogo,
+  name,
+  adress,
+  strength,
+  wellnes,
+  courses,
+  imageSource
+}) {
   return (
     <PicWrapper>
       {/* Das DIv unten zum Image ändern, weil ja eine source weitergegeben wird */}
       <StyledImageDiv src={imageLogo} alt={name} />
       <StyledLink studio={studio} to={`/results/${name}`}>
-        Details
+        Details {studio}
       </StyledLink>
     </PicWrapper>
   );
