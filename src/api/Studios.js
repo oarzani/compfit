@@ -25,7 +25,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: false,
+      six: false,
+      twelve: false,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -61,7 +65,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: true,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -92,7 +100,11 @@ export const studios = [
       cardio: true,
       wellnes: false,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: false,
+      six: false,
+      twelve: false,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -128,7 +140,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: true,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -158,7 +174,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: false,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -192,7 +212,11 @@ export const studios = [
       cardio: false,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: true,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -237,7 +261,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: false,
+      six: false,
+      twelve: false,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -279,51 +307,80 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: true,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   }
 ];
 
 // Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
-export default function getStudioByFilters(activeOptions) {
-  return studios.filter(studio => {
-    if (activeOptions.ladyarea) {
-      if (studio.options.ladyarea === true) {
-        return true;
-      }
-      return false;
-    }
-    if (activeOptions.cardio) {
-      if (studio.options.cardio === true) {
-        return true;
-      }
-      return false;
-    }
-    if (activeOptions.courses) {
-      if (studio.options.courses === true) {
-        return true;
-      }
-      return false;
-    }
-    if (activeOptions.wellnes) {
-      if (studio.options.wellnes === true) {
-        return true;
-      }
-      return false;
-    }
-    if (activeOptions.personaltraining) {
-      if (studio.options.personaltraining === true) {
-        return true;
-      }
-      return false;
-    }
-    if (activeOptions.strength) {
-      if (studio.options.strength === true) {
-        return true;
-      }
-      return false;
-    }
-    return false;
-  });
-}
+// export default function getStudioByFilters(activeOptions) {
+//   return studios.filter(studio => {
+//     if (activeOptions.flexx) {
+//       if (studio.options.flexx === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     if (activeOptions.six) {
+//       if (studio.options.six === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     if (activeOptions.twelve) {
+//       if (studio.options.twelve === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     if (activeOptions.twentyfour) {
+//       if (studio.options.twentyfour === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     if (activeOptions.ladyarea) {
+//       if (studio.options.ladyarea === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     if (activeOptions.cardio) {
+//       if (studio.options.cardio === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     if (activeOptions.courses) {
+//       if (studio.options.courses === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     if (activeOptions.wellnes) {
+//       if (studio.options.wellnes === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     if (activeOptions.personaltraining) {
+//       if (studio.options.personaltraining === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     if (activeOptions.strength) {
+//       if (studio.options.strength === true) {
+//         return true;
+//       }
+//       return false;
+//     }
+
+//     return false;
+//   });
+// }

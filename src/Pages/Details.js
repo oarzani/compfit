@@ -72,7 +72,7 @@ export default function Details({ match }) {
           <Adress>{studio.adress}</Adress>
           <Line />
         </Wrapper>
-        <OpeneningTimesDiv />
+        <OpeneningTimesDiv>{studio.openingtime}</OpeneningTimesDiv>
         <AccordionCardio cardio={studio.cardio} />
         <AccordionCourses courses={studio.courses} />
         <AccordionStrength strength={studio.strength} />

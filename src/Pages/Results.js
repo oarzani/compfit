@@ -41,20 +41,24 @@ export default function Results(history) {
   // }
 
   const [activeOptions, setActiveOptions] = React.useState({
-    cardio: false,
-    courses: false,
-    ladyarea: false,
-    strength: false,
-    personaltraining: false,
-    wellnes: false
+    cardio: true,
+    courses: true,
+    ladyarea: true,
+    strength: true,
+    personaltraining: true,
+    wellnes: true,
+    flexx: true,
+    six: true,
+    twelve: true,
+    twentyfour: true
   });
   console.log(history);
 
   const [filteredStudios, setFilteredStudios] = useState(studios);
 
-  useEffect(() => {
-    setFilteredStudios(getStudioByFilters(activeOptions));
-  }, [activeOptions]);
+  // useEffect(() => {
+  //   setFilteredStudios(getStudioByFilters(activeOptions));
+  // }, [activeOptions]);
 
   function handleOptionsChange(name, value) {
     let newOptions = { ...activeOptions };
@@ -90,7 +94,7 @@ export default function Results(history) {
         </FilterSection>
         <NumberOfResults>Results {filteredStudios.length}</NumberOfResults>
 
-        <StudioList studios={filteredStudios} />
+        <StudioList activeOptions={activeOptions} studios={filteredStudios} />
       </Main>
     </>
   );
