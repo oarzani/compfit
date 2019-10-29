@@ -16,13 +16,14 @@ const CardWrapper = styled.article`
 `;
 
 //To-Do: Link property to Details
-export default function CardComponent({ studio, name }) {
+export default function CardComponent({ studio }) {
   return (
     <CardWrapper>
       <CardElementPic
         imageLogo={studio.imageLogo}
         name={studio.name}
         cardio={studio.cardio}
+        adress={studio.adress}
       />
       <CardElementText
         name={studio.name}

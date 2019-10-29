@@ -5,6 +5,7 @@ import AccordionCourses from "../components/AccordionComps/AccordionCourses";
 import AccordionCardio from "../components/AccordionComps/AccordionCardio";
 import AccordionStrength from "../components/AccordionComps/AccordionStrength";
 import AccordionWellnes from "../components/AccordionComps/AccordionWellnes";
+import { studios } from "../api/Studios";
 
 const Main = styled.main`
   display: flex;
@@ -32,66 +33,60 @@ const IframeWrapper = styled.div`
 
 const OpeneningTimesDiv = styled.article``;
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100px;
 `;
 const Line = styled.hr`
   color: grey;
   width: 80%;
 `;
-const Title = styled.h2``;
+const Title = styled.h2`
+  color: red;
+`;
 
 const Adress = styled.p``;
 const StyledImage = styled.img`
   width: 100%;
-  min-height: 350px;
-  object-fit: cover;
-  object-position: top center;
+  /* min-height: 350px; */
+  /* object-fit: cover;
+  object-position: top center; */
 `;
 
-export default function Details({
-  name,
-  iFrameSource,
-  imageSource,
-  adress,
-  cardio,
-  courses,
-  strength,
-  wellnes,
-  match
-}) {
-  // const studio = studios.find(
-  //   studio => studio.name === match.params.studioName
-  // );
+export default function Details({ match }) {
+  const studio = studios.find(
+    studio => studio.name === match.params.studioName
+  );
+  console.log(studio);
   return (
     <>
       <Header />
       <Main>
         <ImageWrapper>
-          <StyledImage src={imageSource} />
+          <StyledImage src={studio.imageSource} />
         </ImageWrapper>
         <Wrapper>
-          <Title>{name}</Title>
-          <Adress>{adress}</Adress>
+          <Title>{studio.name}</Title>
+          <Adress>{studio.adress}</Adress>
           <Line />
         </Wrapper>
         <OpeneningTimesDiv />
-        <AccordionCardio cardio={cardio} />
-        <AccordionCourses />
-        <AccordionStrength />
-        <AccordionWellnes />
-        {/* <IframeWrapper>
+        <AccordionCardio cardio={studio.cardio} />
+        <AccordionCourses courses={studio.courses} />
+        <AccordionStrength strength={studio.strength} />
+        <AccordionWellnes wellnes={studio.wellnes} />
+        <IframeWrapper name={studio.name} iFrameSource={studio.iFrameSource}>
           <iframe
-            title={name}
-            src={iFrameSource}
+            title={studio.name}
+            src={studio.iFrameSource}
             width="600"
             height="450"
             frameborder="0"
             allowfullscreen=""
           ></iframe>
-        </IframeWrapper> */}
+        </IframeWrapper>
       </Main>
     </>
   );

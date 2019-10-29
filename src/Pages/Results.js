@@ -46,7 +46,7 @@ export default function Results(history) {
     ladyarea: false,
     strength: false,
     personaltraining: false,
-    wellness: false
+    wellnes: false
   });
   console.log(history);
 
