@@ -4,7 +4,7 @@ import OpenAccordion from "../icons/OpenAccordion";
 
 const AccordionWrapper = styled.div`
   width: 100%;
-  min-height: 43px;
+  /* min-height: 43px; */
 `;
 
 const AccordionDiv = styled.div`
@@ -13,7 +13,7 @@ const AccordionDiv = styled.div`
   /* display: flex;
   justify-content: center; */
   text-align: center;
-  height: 100%;
+  /* height: 100%; */
   /* min-height: 43px; */
   box-shadow: 2px 2px 5px rgb(112, 112, 112);
   /* align-items: center; */
@@ -23,10 +23,10 @@ const AccordionDiv = styled.div`
 `;
 
 const Content = styled.div`
-  display: ${props => (props.show ? "block" : "none")};
+  display: ${props => (props.show ? "flex" : "none")};
+  flex-direction: column;
   width: 100%;
   color: #707070;
-  background: #fffcf1;
 `;
 
 const Arrow = styled.div`
@@ -53,7 +53,10 @@ export default function AccordionCardio({ cardio }) {
             <OpenAccordion />
           </Arrow>
         </AccordionDiv>
-        <Content show={toggleContent}>{cardio}</Content>
+        <Content show={toggleContent}>
+          {/* Muss hier gemappt werden? */}
+          <li>{cardio}</li>
+        </Content>
       </AccordionWrapper>
     </>
   );

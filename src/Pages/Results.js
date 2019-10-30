@@ -31,26 +31,17 @@ const NumberOfResults = styled.h3`
 `;
 
 export default function Results(history) {
-  // Suche:
-  // const [search, setSearch] = useState("");
-  // const FilteredByCity = studios.filter(studio =>
-  //   studio.city.toLowerCase().includes(search.toLowerCase())
-  // );
-  // function handleSearchCity(value) {
-  //   setSearch(value);
-  // }
-
   const [activeOptions, setActiveOptions] = React.useState({
-    cardio: true,
-    courses: true,
-    ladyarea: true,
-    strength: true,
-    personaltraining: true,
-    wellnes: true,
-    flexx: true,
-    six: true,
-    twelve: true,
-    twentyfour: true
+    cardio: false,
+    courses: false,
+    ladyarea: false,
+    strength: false,
+    personaltraining: false,
+    wellnes: false,
+    flexx: false,
+    six: false,
+    twelve: false,
+    twentyfour: false
   });
   console.log(history);
 
@@ -85,11 +76,7 @@ export default function Results(history) {
 
       <Main>
         <FilterSection>
-          <SecondSearchbar
-          // onChange={event => handleInputChange(event.target.value)}
-          // handleInputChange={setSearch}
-          // onSearch={handleSearchCity}
-          />
+          <SecondSearchbar />
           <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
         <NumberOfResults>Results {filteredStudios.length}</NumberOfResults>

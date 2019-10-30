@@ -11,7 +11,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: auto;
+  /* overflow: auto; */
   width: 100%;
   height: 100%;
 `;
@@ -37,14 +37,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100px;
+  align-items: center;
 `;
 const Line = styled.hr`
   color: grey;
   width: 80%;
 `;
-const Title = styled.h2`
-  color: red;
+const Title = styled.h1`
+  color: rgb(78, 203, 224);
 `;
 
 const Adress = styled.p``;
@@ -81,7 +81,7 @@ export default function Details({ match }) {
           <iframe
             title={studio.name}
             src={studio.iFrameSource}
-            width="600"
+            width="100%"
             height="450"
             frameborder="0"
             allowfullscreen=""

@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import BackInWhite from "./icons/BackInWhite";
+import { Link } from "react-router-dom";
 
 const HeaderDiv = styled.header`
   height: 65px;
@@ -26,11 +27,16 @@ const Headline = styled.h1`
 const StyledBackInWhite = styled(BackInWhite)`
   margin-left: 20px;
 `;
+const StyledLink = styled(Link)``;
 export default function Header({ active = true }) {
   return (
     <HeaderDiv>
       <HeaderWrapper>
-        {active && <StyledBackInWhite />}
+        {active && (
+          <StyledLink to="/results ">
+            <StyledBackInWhite />
+          </StyledLink>
+        )}
         {!active && <span></span>}
         <Headline>CompFit</Headline>
         <span></span>

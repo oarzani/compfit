@@ -80,7 +80,7 @@ export default function Modal({
         <Title>Choose Contract Duration</Title>
         {/* <DurationBar /> */}
         <BadgeContainer>
-          {/* <BadgeDuration
+          <BadgeDuration
             name={badgeKeys[6]}
             active={activeOptions[badgeKeys[6]]}
             badgeClick={badgeClick}
@@ -99,7 +99,7 @@ export default function Modal({
             name={badgeKeys[9]}
             active={activeOptions[badgeKeys[9]]}
             badgeClick={badgeClick}
-          /> */}
+          />
         </BadgeContainer>
         <Title>Choose Price</Title>
         <RangeBar />

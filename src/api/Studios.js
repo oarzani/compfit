@@ -320,12 +320,14 @@ export const studios = [
 // Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
 // export default function getStudioByFilters(activeOptions) {
 //   return studios.filter(studio => {
+//     console.log(activeOptions, studio);
 //     if (activeOptions.flexx) {
 //       if (studio.options.flexx === true) {
 //         return true;
 //       }
 //       return false;
 //     }
+//     console.log(activeOptions, studio);
 //     if (activeOptions.six) {
 //       if (studio.options.six === true) {
 //         return true;
