@@ -5,7 +5,7 @@ export const studios = [
       "https://www.fitnessfirst.de/modules/custom/ff_custom/images/logo.png",
     imageSource:
       "https://media.cylex.de/companies/7027/998/images/-1174487329-Fitness-First-K%C3%B6ln-Ehrenfeld-Freestyle-Fl%C3%A4che_500999_large.jpg",
-    name: "Fittness First Eherenfeld",
+    name: "Fitness First Ehrenfeld",
     price: [40],
     duration: ["24"],
     courses: ["Zumba", "Yoga", "Body-Pump"],

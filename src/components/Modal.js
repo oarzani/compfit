@@ -62,16 +62,13 @@ const Line = styled.hr`
 `;
 
 export default function Modal({
-  children,
   show = true,
   hideBackdrop,
   handleClickEvent,
   activeOptions,
-  setActiveOptions,
+
   badgeClick
 }) {
-  // function handleClickOnBadge ()
-
   const badgeKeys = Object.keys(activeOptions);
 
   return (
@@ -143,7 +140,8 @@ export default function Modal({
         </BadgeContainer>
         <Line />
         <Title>Select Neighborhood(s)</Title>
-        {/* <BadgeContainer>
+        {/* Zum Verständnis auskommentiert:
+        <BadgeContainer>
           {NeighbourhoodOptions.map(option => {
             return (
               <Badge

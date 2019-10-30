@@ -11,7 +11,6 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* overflow: auto; */
   width: 100%;
   height: 100%;
 `;
@@ -31,7 +30,9 @@ const IframeWrapper = styled.div`
   object-position: top center;
 `;
 
-const OpeneningTimesDiv = styled.article``;
+const OpeneningTimesDiv = styled.article`
+  margin-bottom: 20px;
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -50,9 +51,6 @@ const Title = styled.h1`
 const Adress = styled.p``;
 const StyledImage = styled.img`
   width: 100%;
-  /* min-height: 350px; */
-  /* object-fit: cover;
-  object-position: top center; */
 `;
 
 export default function Details({ match }) {

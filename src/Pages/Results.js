@@ -4,7 +4,7 @@ import { SecondSearchbar } from "../components/SearchCityBarGrey";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import getStudioByFilters, { studios } from "../api/Studios";
+import { studios } from "../api/Studios";
 import Modal from "../components/Modal";
 
 const Main = styled.main`
@@ -26,10 +26,6 @@ const FilterSection = styled.section`
   margin-bottom: 10px;
 `;
 
-const NumberOfResults = styled.h3`
-  font-family: Arial, Helvetica, sans-serif;
-`;
-
 export default function Results(history) {
   const [activeOptions, setActiveOptions] = React.useState({
     cardio: false,
@@ -46,7 +42,7 @@ export default function Results(history) {
   console.log(history);
 
   const [filteredStudios, setFilteredStudios] = useState(studios);
-
+  // Variante unten bezieht getStudioByFilters aus der api/Studios.js
   // useEffect(() => {
   //   setFilteredStudios(getStudioByFilters(activeOptions));
   // }, [activeOptions]);
@@ -79,7 +75,6 @@ export default function Results(history) {
           <SecondSearchbar />
           <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
-        <NumberOfResults>Results {filteredStudios.length}</NumberOfResults>
 
         <StudioList activeOptions={activeOptions} studios={filteredStudios} />
       </Main>
