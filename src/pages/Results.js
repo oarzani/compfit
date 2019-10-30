@@ -4,7 +4,7 @@ import { SecondSearchbar } from "../components/SearchCityBarGrey";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import { studios, getStudioByFilters } from "../api/Studios";
+import { studios, getStudioByFilters } from "../api/studios";
 import Modal from "../components/Modal";
 
 const Main = styled.main`
@@ -41,9 +41,9 @@ const defaultOptions = {
 
 export default function Results({ history }) {
   const [activeOptions, setActiveOptions] = React.useState(defaultOptions);
-  console.log(history);
-
   const [filteredStudios, setFilteredStudios] = useState(studios);
+  const [showModal, setShowModal] = React.useState(false);
+
   // Variante unten bezieht getStudioByFilters aus der api/Studios.js
   useEffect(() => {
     setFilteredStudios(getStudioByFilters(activeOptions));
@@ -58,15 +58,14 @@ export default function Results({ history }) {
     console.log(name, value);
   }
 
-  const [showModal, setShowModal] = React.useState(false);
+  console.log(history);
 
   return (
     <>
       {showModal && (
         <Modal
           activeOptions={activeOptions}
-          setActiveOptions={setActiveOptions}
-          handleClickEvent={() => setShowModal(false)}
+          onButtonClick={() => setShowModal(false)}
           badgeClick={handleOptionsChange}
         />
       )}

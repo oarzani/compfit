@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CardComponent from "./CardComponent";
-import { studios } from "../api/Studios";
+import { studios } from "../api/studio";
 
 const List = styled.section`
   flex-grow: 1;

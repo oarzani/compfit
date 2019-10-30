@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import OpenAccordion from "../icons/OpenAccordion";
-import { studios } from "../../api/Studios";
+import { studios } from "../../api/studio";
 
 const AccordionWrapper = styled.div`
   width: 100%;

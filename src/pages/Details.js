@@ -5,7 +5,7 @@ import AccordionCourses from "../components/AccordionComps/AccordionCourses";
 import AccordionCardio from "../components/AccordionComps/AccordionCardio";
 import AccordionStrength from "../components/AccordionComps/AccordionStrength";
 import AccordionWellnes from "../components/AccordionComps/AccordionWellnes";
-import { studios } from "../api/Studios";
+import { studios } from "../api/studio";
 
 const Main = styled.main`
   display: flex;

@@ -26,12 +26,8 @@ const BadgeDiv = styled.div`
 `;
 
 export default function Badge({ name, active, badgeClick }) {
-  function handleClick(name, active) {
-    badgeClick(name, active);
-  }
-
   return (
-    <BadgeDiv onClick={() => handleClick(name, active)} active={active}>
+    <BadgeDiv onClick={() => badgeClick(name, active)} active={active}>
       {name[0].toUpperCase() + name.slice(1)}
     </BadgeDiv>
   );
