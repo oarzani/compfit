@@ -1,7 +1,7 @@
 import React from "react";
-import Results from "../Pages/Results";
-import Details from "../Pages/Details";
-import Start from "../Pages/Start";
+import Results from "../pages/Results";
+import Details from "../pages/Details";
+import Start from "../pages/Start";
 
 export default {
   title: "Pages"

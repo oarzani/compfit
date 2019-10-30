@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Start from "./Pages/Start";
+import Start from "./pages/Start";
 import GlobalStyle from "../src/components/GlobalStyle";
 
-import Results from "./Pages/Results";
-import Details from "./Pages/Details";
+import Results from "./pages/Results";
+import Details from "./pages/Details";
 
 const Container = styled.div`
   width: 100vw;
