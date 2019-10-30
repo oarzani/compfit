@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import CheckSecond from "./icons/CheckSecond";
+import CheckSecond from "../icons/CheckSecond";
 
 const DoesMeet = styled(CheckSecond)`
   fill: #6be895;

@@ -53,7 +53,7 @@ const StyledImage = styled.img`
 export default function Start() {
   return (
     <Main>
-      <Header />
+      <Header active={false} />
       <TextWrapper></TextWrapper>
       <SearchBarWrapper>
         <Text>

@@ -4,17 +4,15 @@ import OpenAccordion from "../icons/OpenAccordion";
 
 const AccordionWrapper = styled.div`
   width: 100%;
-  min-height: 43px;
+  /* min-height: 43px; */
 `;
 
 const AccordionDiv = styled.div`
   background: transparent;
   color: #4ecbe0;
-  /* display: flex;
-  justify-content: center; */
+
   text-align: center;
-  height: 100%;
-  /* min-height: 43px; */
+
   box-shadow: 2px 2px 5px rgb(112, 112, 112);
   /* align-items: center; */
   font-size: 16pt;

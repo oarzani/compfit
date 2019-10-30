@@ -5,7 +5,7 @@ export const studios = [
       "https://www.fitnessfirst.de/modules/custom/ff_custom/images/logo.png",
     imageSource:
       "https://media.cylex.de/companies/7027/998/images/-1174487329-Fitness-First-K%C3%B6ln-Ehrenfeld-Freestyle-Fl%C3%A4che_500999_large.jpg",
-    name: "Fittness First Eherenfeld",
+    name: "Fitness First Ehrenfeld",
     price: [40],
     duration: ["24"],
     courses: ["Zumba", "Yoga", "Body-Pump"],
@@ -25,7 +25,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: false,
+      six: false,
+      twelve: false,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -61,7 +65,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: true,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -92,7 +100,11 @@ export const studios = [
       cardio: true,
       wellnes: false,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: false,
+      six: false,
+      twelve: false,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -128,7 +140,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: true,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -158,7 +174,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: false,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -192,7 +212,11 @@ export const studios = [
       cardio: false,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: true,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -237,7 +261,11 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: false,
+      six: false,
+      twelve: false,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   },
@@ -279,15 +307,40 @@ export const studios = [
       cardio: true,
       wellnes: true,
       strength: true,
-      courses: true
+      courses: true,
+      flexx: true,
+      six: true,
+      twelve: true,
+      twentyfour: true
     },
     openingtime: "Mo-Do: 7-23, Fr: 7-22 , Sa-So: 10-22"
   }
 ];
 
 // Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
-export default function getStudioByFilters(activeOptions) {
+export function getStudioByFilters(activeOptions) {
+  const filters = Object.keys(activeOptions); // filters === ['flexx', 'six', 'twelve']
+
   return studios.filter(studio => {
+    console.log(activeOptions, studio);
+    if (activeOptions.flexx && !studio.options.flexx) {
+      return false;
+    }
+    if (activeOptions.six && !studio.options.six) {
+      return false;
+    }
+    if (activeOptions.twelve) {
+      if (studio.options.twelve === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.twentyfour) {
+      if (studio.options.twentyfour === true) {
+        return true;
+      }
+      return false;
+    }
     if (activeOptions.ladyarea) {
       if (studio.options.ladyarea === true) {
         return true;
@@ -324,6 +377,17 @@ export default function getStudioByFilters(activeOptions) {
       }
       return false;
     }
+
     return false;
   });
 }
+
+// // Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
+// export function getStudioByFilters(activeOptions) {
+//   const filters = Object.keys(activeOptions); // filters === ['flexx', 'six', 'twelve']
+
+//   return studios.filter(studio => {
+//     const fulfilledFilters = filters.every(filter => studio.options[filter]);
+//     return fulfilledFilters;
+//   });
+// }

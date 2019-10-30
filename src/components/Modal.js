@@ -3,9 +3,9 @@ import styled from "styled-components";
 import CloseButton from "./CloseButton";
 import ApplyButton from "./ApplyButton";
 import PropTypes from "prop-types";
-import DurationBar from "./DurationBar";
 import RangeBar from "./RangeBar";
 import Badge from "./Badge";
+import BadgeDuration from "./BadgeDuration";
 
 const Container = styled.div`
   background: white;
@@ -62,23 +62,42 @@ const Line = styled.hr`
 `;
 
 export default function Modal({
-  children,
   show = true,
   hideBackdrop,
   handleClickEvent,
   activeOptions,
-  setActiveOptions,
+
   badgeClick
 }) {
-  // function handleClickOnBadge ()
-
   const badgeKeys = Object.keys(activeOptions);
 
   return (
     <>
       <Container show={show}>
         <Title>Choose Contract Duration</Title>
-        <DurationBar />
+        {/* <DurationBar /> */}
+        <BadgeContainer>
+          <BadgeDuration
+            name={badgeKeys[6]}
+            active={activeOptions[badgeKeys[6]]}
+            badgeClick={badgeClick}
+          />
+          <BadgeDuration
+            name={badgeKeys[7]}
+            active={activeOptions[badgeKeys[7]]}
+            badgeClick={badgeClick}
+          />
+          <BadgeDuration
+            name={badgeKeys[8]}
+            active={activeOptions[badgeKeys[8]]}
+            badgeClick={badgeClick}
+          />
+          <BadgeDuration
+            name={badgeKeys[9]}
+            active={activeOptions[badgeKeys[9]]}
+            badgeClick={badgeClick}
+          />
+        </BadgeContainer>
         <Title>Choose Price</Title>
         <RangeBar />
         <Line />
@@ -121,7 +140,8 @@ export default function Modal({
         </BadgeContainer>
         <Line />
         <Title>Select Neighborhood(s)</Title>
-        {/* <BadgeContainer>
+        {/* Zum Verständnis auskommentiert:
+        <BadgeContainer>
           {NeighbourhoodOptions.map(option => {
             return (
               <Badge

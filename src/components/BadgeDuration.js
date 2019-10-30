@@ -25,15 +25,19 @@ const BadgeDiv = styled.div`
   cursor: pointer;
 `;
 
-export default function Badge({ name, active, badgeClick }) {
+export default function BadgeDuration({ name, active, badgeClick }) {
+  function handleClick(name, active) {
+    badgeClick(name, active);
+  }
+
   return (
-    <BadgeDiv onClick={() => badgeClick(name, active)} active={active}>
+    <BadgeDiv onClick={() => handleClick(name, active)} active={active}>
       {name[0].toUpperCase() + name.slice(1)}
     </BadgeDiv>
   );
 }
 
-Badge.propTypes = {
+BadgeDuration.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func

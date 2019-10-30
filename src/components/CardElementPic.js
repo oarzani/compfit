@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { studios } from "../api/Studios";
+import { studios } from "../api/studio";
 
 const PicWrapper = styled.div`
   display: flex;

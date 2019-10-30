@@ -4,7 +4,7 @@ import { SecondSearchbar } from "../components/SearchCityBarGrey";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import getStudioByFilters, { studios } from "../api/Studios";
+import { studios, getStudioByFilters } from "../api/studios";
 import Modal from "../components/Modal";
 
 const Main = styled.main`
@@ -26,32 +26,25 @@ const FilterSection = styled.section`
   margin-bottom: 10px;
 `;
 
-const NumberOfResults = styled.h3`
-  font-family: Arial, Helvetica, sans-serif;
-`;
+const defaultOptions = {
+  cardio: false,
+  courses: false,
+  ladyarea: false,
+  strength: false,
+  personaltraining: false,
+  wellnes: false,
+  flexx: false,
+  six: false,
+  twelve: false,
+  twentyfour: false
+};
 
-export default function Results(history) {
-  // Suche:
-  // const [search, setSearch] = useState("");
-  // const FilteredByCity = studios.filter(studio =>
-  //   studio.city.toLowerCase().includes(search.toLowerCase())
-  // );
-  // function handleSearchCity(value) {
-  //   setSearch(value);
-  // }
-
-  const [activeOptions, setActiveOptions] = React.useState({
-    cardio: false,
-    courses: false,
-    ladyarea: false,
-    strength: false,
-    personaltraining: false,
-    wellnes: false
-  });
-  console.log(history);
-
+export default function Results({ history }) {
+  const [activeOptions, setActiveOptions] = React.useState(defaultOptions);
   const [filteredStudios, setFilteredStudios] = useState(studios);
+  const [showModal, setShowModal] = React.useState(false);
 
+  // Variante unten bezieht getStudioByFilters aus der api/Studios.js
   useEffect(() => {
     setFilteredStudios(getStudioByFilters(activeOptions));
   }, [activeOptions]);
@@ -65,15 +58,14 @@ export default function Results(history) {
     console.log(name, value);
   }
 
-  const [showModal, setShowModal] = React.useState(false);
+  console.log(history);
 
   return (
     <>
       {showModal && (
         <Modal
           activeOptions={activeOptions}
-          setActiveOptions={setActiveOptions}
-          handleClickEvent={() => setShowModal(false)}
+          onButtonClick={() => setShowModal(false)}
           badgeClick={handleOptionsChange}
         />
       )}
@@ -81,16 +73,11 @@ export default function Results(history) {
 
       <Main>
         <FilterSection>
-          <SecondSearchbar
-          // onChange={event => handleInputChange(event.target.value)}
-          // handleInputChange={setSearch}
-          // onSearch={handleSearchCity}
-          />
+          <SecondSearchbar />
           <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
-        <NumberOfResults>Results {filteredStudios.length}</NumberOfResults>
 
-        <StudioList studios={filteredStudios} />
+        <StudioList activeOptions={activeOptions} studios={filteredStudios} />
       </Main>
     </>
   );
