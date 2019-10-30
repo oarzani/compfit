@@ -318,71 +318,76 @@ export const studios = [
 ];
 
 // Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
-// export default function getStudioByFilters(activeOptions) {
-//   return studios.filter(studio => {
-//     console.log(activeOptions, studio);
-//     if (activeOptions.flexx) {
-//       if (studio.options.flexx === true) {
-//         return true;
-//       }
-//       return false;
-//     }
-//     console.log(activeOptions, studio);
-//     if (activeOptions.six) {
-//       if (studio.options.six === true) {
-//         return true;
-//       }
-//       return false;
-//     }
-//     if (activeOptions.twelve) {
-//       if (studio.options.twelve === true) {
-//         return true;
-//       }
-//       return false;
-//     }
-//     if (activeOptions.twentyfour) {
-//       if (studio.options.twentyfour === true) {
-//         return true;
-//       }
-//       return false;
-//     }
-//     if (activeOptions.ladyarea) {
-//       if (studio.options.ladyarea === true) {
-//         return true;
-//       }
-//       return false;
-//     }
-//     if (activeOptions.cardio) {
-//       if (studio.options.cardio === true) {
-//         return true;
-//       }
-//       return false;
-//     }
-//     if (activeOptions.courses) {
-//       if (studio.options.courses === true) {
-//         return true;
-//       }
-//       return false;
-//     }
-//     if (activeOptions.wellnes) {
-//       if (studio.options.wellnes === true) {
-//         return true;
-//       }
-//       return false;
-//     }
-//     if (activeOptions.personaltraining) {
-//       if (studio.options.personaltraining === true) {
-//         return true;
-//       }
-//       return false;
-//     }
-//     if (activeOptions.strength) {
-//       if (studio.options.strength === true) {
-//         return true;
-//       }
-//       return false;
-//     }
+export function getStudioByFilters(activeOptions) {
+  const filters = Object.keys(activeOptions); // filters === ['flexx', 'six', 'twelve']
 
-//     return false;
+  return studios.filter(studio => {
+    console.log(activeOptions, studio);
+    if (activeOptions.flexx && !studio.options.flexx) {
+      return false;
+    }
+    if (activeOptions.six && !studio.options.six) {
+      return false;
+    }
+    if (activeOptions.twelve) {
+      if (studio.options.twelve === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.twentyfour) {
+      if (studio.options.twentyfour === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.ladyarea) {
+      if (studio.options.ladyarea === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.cardio) {
+      if (studio.options.cardio === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.courses) {
+      if (studio.options.courses === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.wellnes) {
+      if (studio.options.wellnes === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.personaltraining) {
+      if (studio.options.personaltraining === true) {
+        return true;
+      }
+      return false;
+    }
+    if (activeOptions.strength) {
+      if (studio.options.strength === true) {
+        return true;
+      }
+      return false;
+    }
+
+    return false;
+  });
+}
+
+// // Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
+// export function getStudioByFilters(activeOptions) {
+//   const filters = Object.keys(activeOptions); // filters === ['flexx', 'six', 'twelve']
+
+//   return studios.filter(studio => {
+//     const fulfilledFilters = filters.every(filter => studio.options[filter]);
+//     return fulfilledFilters;
 //   });
 // }
