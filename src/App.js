@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Start from "./pages/Start";
 import GlobalStyle from "../src/components/GlobalStyle";
 
-import Results from "./pages/Results";
+import Gyms from "./pages/Gyms";
 import Details from "./pages/Details";
 
 const Container = styled.div`
@@ -21,8 +21,8 @@ function App() {
       <Container>
         <Router>
           <Route exact path="/" component={Start} />
-          <Route exact path="/results" component={Results} />
-          <Route path="/results/:studioName" component={Details} />
+          <Route exact path="/gyms" component={Gyms} />
+          <Route path="/gyms/:studioName" component={Details} />
         </Router>
       </Container>
     </>

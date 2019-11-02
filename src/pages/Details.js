@@ -51,6 +51,13 @@ const Title = styled.h1`
 const Adress = styled.p``;
 const StyledImage = styled.img`
   width: 100%;
+  object-fit: cover;
+  /* object-position: top center; */
+`;
+
+const StlyedIframe = styled.iframe`
+  width: 100%;
+  height: 450px;
 `;
 
 export default function Details({ match }) {
@@ -76,14 +83,7 @@ export default function Details({ match }) {
         <AccordionStrength strength={studio.strength} />
         <AccordionWellnes wellnes={studio.wellnes} />
         <IframeWrapper name={studio.name} iFrameSource={studio.iFrameSource}>
-          <iframe
-            title={studio.name}
-            src={studio.iFrameSource}
-            width="100%"
-            height="450"
-            frameborder="0"
-            allowfullscreen=""
-          ></iframe>
+          <StlyedIframe title={studio.name} src={studio.iFrameSource} />
         </IframeWrapper>
       </Main>
     </>

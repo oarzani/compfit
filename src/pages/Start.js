@@ -18,13 +18,6 @@ const PictureWrapper = styled.div`
   margin-top: 10px;
 `;
 
-const TextWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-`;
-
 const Text = styled.h2`
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -53,8 +46,8 @@ const StyledImage = styled.img`
 export default function Start() {
   return (
     <Main>
-      <Header active={false} />
-      <TextWrapper></TextWrapper>
+      <Header showBack={false} />
+
       <SearchBarWrapper>
         <Text>
           Find the gym that fits <br />

@@ -319,7 +319,7 @@ export const studios = [
 
 // Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
 export function getStudioByFilters(filters) {
-  const selectedfilters = Object.keys(filters); // filters === ['flexx', 'six', 'twelve']
+  // const selectedfilters = Object.keys(filters); // filters === ['flexx', 'six', 'twelve']
 
   return studios.filter(studio => {
     console.log(filters, studio);
@@ -335,56 +335,33 @@ export function getStudioByFilters(filters) {
     if (filters.six && !studio.options.six) {
       return false;
     }
-    if (filters.twelve) {
-      if (studio.options.twelve === true) {
-        return true;
-      }
+    if (filters.twelve && !studio.options.twelve) {
       return false;
     }
-    if (filters.twentyfour) {
-      if (studio.options.twentyfour === true) {
-        return true;
-      }
+    if (filters.twentyfour && !studio.options.twentyfour) {
       return false;
     }
-    if (filters.ladyarea) {
-      if (studio.options.ladyarea === true) {
-        return true;
-      }
-      return false;
-    }
-    if (filters.cardio) {
-      if (studio.options.cardio === true) {
-        return true;
-      }
-      return false;
-    }
-    if (filters.courses) {
-      if (studio.options.courses === true) {
-        return true;
-      }
-      return false;
-    }
-    if (filters.wellnes) {
-      if (studio.options.wellnes === true) {
-        return true;
-      }
-      return false;
-    }
-    if (filters.personaltraining) {
-      if (studio.options.personaltraining === true) {
-        return true;
-      }
-      return false;
-    }
-    if (filters.strength) {
-      if (studio.options.strength === true) {
-        return true;
-      }
+    if (filters.ladyarea && !studio.options.ladyarea) {
       return false;
     }
 
-    return false;
+    if (filters.cardio && !studio.options.cardio) {
+      return false;
+    }
+    if (filters.courses && !studio.options.courses) {
+      return false;
+    }
+    if (filters.wellnes && !studio.options.wellnes) {
+      return false;
+    }
+    if (filters.personaltraining && !studio.options.personaltraining) {
+      return false;
+    }
+    if (filters.strength && !studio.options.strength) {
+      return false;
+    }
+
+    return true;
   });
 }
 
