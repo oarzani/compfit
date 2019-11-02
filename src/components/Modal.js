@@ -64,12 +64,13 @@ const Line = styled.hr`
 export default function Modal({
   show = true,
   hideBackdrop,
-  handleClickEvent,
-  activeOptions,
+
+  filters,
+  onButtonClick,
 
   badgeClick
 }) {
-  const badgeKeys = Object.keys(activeOptions);
+  const badgeKeys = Object.keys(filters);
 
   return (
     <>
@@ -79,22 +80,22 @@ export default function Modal({
         <BadgeContainer>
           <BadgeDuration
             name={badgeKeys[6]}
-            active={activeOptions[badgeKeys[6]]}
+            active={filters[badgeKeys[6]]}
             badgeClick={badgeClick}
           />
           <BadgeDuration
             name={badgeKeys[7]}
-            active={activeOptions[badgeKeys[7]]}
+            active={filters[badgeKeys[7]]}
             badgeClick={badgeClick}
           />
           <BadgeDuration
             name={badgeKeys[8]}
-            active={activeOptions[badgeKeys[8]]}
+            active={filters[badgeKeys[8]]}
             badgeClick={badgeClick}
           />
           <BadgeDuration
             name={badgeKeys[9]}
-            active={activeOptions[badgeKeys[9]]}
+            active={filters[badgeKeys[9]]}
             badgeClick={badgeClick}
           />
         </BadgeContainer>
@@ -105,36 +106,36 @@ export default function Modal({
         <BadgeContainer>
           <Badge
             name={badgeKeys[0]}
-            active={activeOptions[badgeKeys[0]]}
+            active={filters[badgeKeys[0]]}
             badgeClick={badgeClick}
           ></Badge>
           <Badge
             name={badgeKeys[1]}
-            active={activeOptions[badgeKeys[1]]}
+            active={filters[badgeKeys[1]]}
             badgeClick={badgeClick}
           />
 
           <Badge
             name={badgeKeys[2]}
-            active={activeOptions[badgeKeys[2]]}
+            active={filters[badgeKeys[2]]}
             badgeClick={badgeClick}
           />
 
           <Badge
             name={badgeKeys[3]}
-            active={activeOptions[badgeKeys[3]]}
+            active={filters[badgeKeys[3]]}
             badgeClick={badgeClick}
           />
 
           <Badge
             name={badgeKeys[4]}
-            active={activeOptions[badgeKeys[4]]}
+            active={filters[badgeKeys[4]]}
             badgeClick={badgeClick}
           />
 
           <Badge
             name={badgeKeys[5]}
-            active={activeOptions[badgeKeys[5]]}
+            active={filters[badgeKeys[5]]}
             badgeClick={badgeClick}
           />
         </BadgeContainer>
@@ -146,11 +147,11 @@ export default function Modal({
             return (
               <Badge
                 key={option}
-                active={!!activeOptions[option]}
+                active={!!filters[option]}
                 onClick={() =>
-                  setActiveOptions({
-                    ...activeOptions,
-                    [option]: !activeOptions[option]
+                  setFilters({
+                    ...filters,
+                    [option]: !filters[option]
                   })
                 }
               >
@@ -160,13 +161,13 @@ export default function Modal({
           })}
         </BadgeContainer> */}
         <ClosingDiv>
-          <CloseButton onClick={handleClickEvent} />
+          <CloseButton onClick={onButtonClick} />
         </ClosingDiv>
         <SubmitButton>
-          <ApplyButton onClick={handleClickEvent} />
+          <ApplyButton onClick={onButtonClick} />
         </SubmitButton>
       </Container>
-      {!hideBackdrop && <Backdrop onClick={handleClickEvent} show={show} />}
+      {!hideBackdrop && <Backdrop onClick={onButtonClick} show={show} />}
     </>
   );
 }

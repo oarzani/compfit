@@ -15,63 +15,63 @@ const NumberOfResults = styled.h3`
   font-family: Arial, Helvetica, sans-serif;
 `;
 
-export default function StudioList({ activeOptions }) {
+export default function StudioList({ filters }) {
   const filteredStudios = studios.filter(studio => {
-    if (activeOptions.flexx) {
+    if (filters.flexx) {
       if (studio.options.flexx === true) {
         return true;
       }
       return false;
     }
-    if (activeOptions.six) {
+    if (filters.six) {
       if (studio.options.six === true) {
         return true;
       }
       return false;
     }
-    if (activeOptions.twelve) {
+    if (filters.twelve) {
       if (studio.options.twelve === true) {
         return true;
       }
       return false;
     }
-    if (activeOptions.twentyfour) {
+    if (filters.twentyfour) {
       if (studio.options.twentyfour === true) {
         return true;
       }
       return false;
     }
-    if (activeOptions.ladyarea) {
+    if (filters.ladyarea) {
       if (studio.options.ladyarea === true) {
         return true;
       }
       return false;
     }
-    if (activeOptions.cardio) {
+    if (filters.cardio) {
       if (studio.options.cardio === true) {
         return true;
       }
       return false;
     }
-    if (activeOptions.courses) {
+    if (filters.courses) {
       if (studio.options.courses === true) {
         return true;
       }
       return false;
     }
-    if (activeOptions.wellnes) {
+    if (filters.wellnes) {
       if (studio.options.wellnes === true) {
         return true;
       }
       return false;
     }
-    if (activeOptions.personaltraining) {
+    if (filters.personaltraining) {
       if (studio.options.personaltraining === true) {
         return true;
       }
       return false;
     }
-    if (activeOptions.strength) {
+    if (filters.strength) {
       if (studio.options.strength === true) {
         return true;
       }

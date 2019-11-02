@@ -4,7 +4,7 @@ import { SecondSearchbar } from "../components/SearchCityBarGrey";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import { studios, getStudioByFilters } from "../api/studios";
+import { studios, getStudioByFilters } from "../api/studio";
 import Modal from "../components/Modal";
 
 const Main = styled.main`
@@ -26,7 +26,7 @@ const FilterSection = styled.section`
   margin-bottom: 10px;
 `;
 
-const defaultOptions = {
+const defaultFilters = {
   cardio: false,
   courses: false,
   ladyarea: false,
@@ -40,21 +40,21 @@ const defaultOptions = {
 };
 
 export default function Results({ history }) {
-  const [activeOptions, setActiveOptions] = React.useState(defaultOptions);
+  const [filters, setFilters] = React.useState(defaultFilters);
   const [filteredStudios, setFilteredStudios] = useState(studios);
   const [showModal, setShowModal] = React.useState(false);
 
   // Variante unten bezieht getStudioByFilters aus der api/Studios.js
   useEffect(() => {
-    setFilteredStudios(getStudioByFilters(activeOptions));
-  }, [activeOptions]);
+    setFilteredStudios(getStudioByFilters(filters));
+  }, [filters]);
 
   function handleOptionsChange(name, value) {
-    let newOptions = { ...activeOptions };
+    let newFilters = { ...filters };
 
-    newOptions[name] = !value;
+    newFilters[name] = !value;
 
-    setActiveOptions(newOptions);
+    setFilters(newFilters);
     console.log(name, value);
   }
 
@@ -64,7 +64,7 @@ export default function Results({ history }) {
     <>
       {showModal && (
         <Modal
-          activeOptions={activeOptions}
+          filters={filters}
           onButtonClick={() => setShowModal(false)}
           badgeClick={handleOptionsChange}
         />
@@ -77,7 +77,7 @@ export default function Results({ history }) {
           <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
 
-        <StudioList activeOptions={activeOptions} studios={filteredStudios} />
+        <StudioList filters={filters} studios={filteredStudios} />
       </Main>
     </>
   );
