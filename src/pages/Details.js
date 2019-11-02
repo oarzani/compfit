@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import AccordionCourses from "../components/AccordionComps/AccordionCourses";
-import AccordionCardio from "../components/AccordionComps/AccordionCardio";
-import AccordionStrength from "../components/AccordionComps/AccordionStrength";
-import AccordionWellnes from "../components/AccordionComps/AccordionWellnes";
+import AccordionCourses from "../components/accordion/AccordionCourses";
+import AccordionCardio from "../components/accordion/AccordionCardio";
+import AccordionStrength from "../components/accordion/AccordionStrength";
+import AccordionWellnes from "../components/accordion/AccordionWellnes";
 import { studios } from "../api/studio";
 
 const Main = styled.main`
