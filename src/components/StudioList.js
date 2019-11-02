@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import CardComponent from "./CardComponent";
+import CardComponent from "./card/CardComponent";
 import { studios } from "../api/studio";
 
 const List = styled.section`
