@@ -25,9 +25,9 @@ const BadgeDiv = styled.div`
   cursor: pointer;
 `;
 
-export default function BadgeDuration({ name, active, badgeClick }) {
+export default function BadgeDuration({ name, active, onBadgeClick }) {
   function handleClick(name, active) {
-    badgeClick(name, active);
+    onBadgeClick(name, active);
   }
 
   return (

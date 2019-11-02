@@ -25,9 +25,9 @@ const BadgeDiv = styled.div`
   cursor: pointer;
 `;
 
-export default function Badge({ name, active, badgeClick }) {
+export default function Badge({ name, active, onBadgeClick }) {
   return (
-    <BadgeDiv onClick={() => badgeClick(name, active)} active={active}>
+    <BadgeDiv onClick={() => onBadgeClick(name, active)} active={active}>
       {name[0].toUpperCase() + name.slice(1)}
     </BadgeDiv>
   );

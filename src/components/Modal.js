@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import CloseButton from "./CloseButton";
 import ApplyButton from "./ApplyButton";
 import PropTypes from "prop-types";
 import RangeBar from "./RangeBar";
@@ -22,11 +21,6 @@ const Container = styled.div`
   z-index: 11;
 `;
 
-const ClosingDiv = styled.div`
-  position: absolute;
-  right: -10px;
-  top: -22px;
-`;
 const SubmitButton = styled.div`
   position: absolute;
   left: calc(50% - 22px);
@@ -64,12 +58,13 @@ const Line = styled.hr`
 export default function Modal({
   show = true,
   hideBackdrop,
-  handleClickEvent,
-  activeOptions,
-
-  badgeClick
+  filters,
+  setFilters,
+  onButtonClick,
+  onBadgeClick,
+  handleChange
 }) {
-  const badgeKeys = Object.keys(activeOptions);
+  const badgeKeys = Object.keys(filters);
 
   return (
     <>
@@ -79,94 +74,78 @@ export default function Modal({
         <BadgeContainer>
           <BadgeDuration
             name={badgeKeys[6]}
-            active={activeOptions[badgeKeys[6]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[6]]}
+            onBadgeClick={onBadgeClick}
           />
           <BadgeDuration
             name={badgeKeys[7]}
-            active={activeOptions[badgeKeys[7]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[7]]}
+            onBadgeClick={onBadgeClick}
           />
           <BadgeDuration
             name={badgeKeys[8]}
-            active={activeOptions[badgeKeys[8]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[8]]}
+            onBadgeClick={onBadgeClick}
           />
           <BadgeDuration
             name={badgeKeys[9]}
-            active={activeOptions[badgeKeys[9]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[9]]}
+            onBadgeClick={onBadgeClick}
           />
         </BadgeContainer>
         <Title>Choose Price</Title>
-        <RangeBar />
+        <RangeBar
+          filters={filters}
+          active={filters[badgeKeys[10]]}
+          setFilters={setFilters}
+          onChange={handleChange}
+        />
         <Line />
         <Title>Select Folowing</Title>
         <BadgeContainer>
           <Badge
             name={badgeKeys[0]}
-            active={activeOptions[badgeKeys[0]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[0]]}
+            onBadgeClick={onBadgeClick}
           ></Badge>
           <Badge
             name={badgeKeys[1]}
-            active={activeOptions[badgeKeys[1]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[1]]}
+            onBadgeClick={onBadgeClick}
           />
 
           <Badge
             name={badgeKeys[2]}
-            active={activeOptions[badgeKeys[2]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[2]]}
+            onBadgeClick={onBadgeClick}
           />
 
           <Badge
             name={badgeKeys[3]}
-            active={activeOptions[badgeKeys[3]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[3]]}
+            onBadgeClick={onBadgeClick}
           />
 
           <Badge
             name={badgeKeys[4]}
-            active={activeOptions[badgeKeys[4]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[4]]}
+            onBadgeClick={onBadgeClick}
           />
 
           <Badge
             name={badgeKeys[5]}
-            active={activeOptions[badgeKeys[5]]}
-            badgeClick={badgeClick}
+            active={filters[badgeKeys[5]]}
+            onBadgeClick={onBadgeClick}
           />
         </BadgeContainer>
         <Line />
-        <Title>Select Neighborhood(s)</Title>
-        {/* Zum Verständnis auskommentiert:
-        <BadgeContainer>
-          {NeighbourhoodOptions.map(option => {
-            return (
-              <Badge
-                key={option}
-                active={!!activeOptions[option]}
-                onClick={() =>
-                  setActiveOptions({
-                    ...activeOptions,
-                    [option]: !activeOptions[option]
-                  })
-                }
-              >
-                {option}
-              </Badge>
-            );
-          })}
-        </BadgeContainer> */}
-        <ClosingDiv>
-          <CloseButton onClick={handleClickEvent} />
-        </ClosingDiv>
+        {/* <Title>Select Neighborhood(s)</Title> */}
+
         <SubmitButton>
-          <ApplyButton onClick={handleClickEvent} />
+          <ApplyButton onClick={onButtonClick} />
         </SubmitButton>
       </Container>
-      {!hideBackdrop && <Backdrop onClick={handleClickEvent} show={show} />}
+      {!hideBackdrop && <Backdrop onClick={onButtonClick} show={show} />}
     </>
   );
 }

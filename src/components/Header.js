@@ -28,16 +28,16 @@ const StyledBackInWhite = styled(BackInWhite)`
   margin-left: 20px;
 `;
 const StyledLink = styled(Link)``;
-export default function Header({ active = true }) {
+export default function Header({ showBack = true }) {
   return (
     <HeaderDiv>
       <HeaderWrapper>
-        {active && (
-          <StyledLink to="/results ">
+        {showBack && (
+          <StyledLink to="/results">
             <StyledBackInWhite />
           </StyledLink>
         )}
-        {!active && <span></span>}
+        {!showBack && <span></span>}
         <Headline>CompFit</Headline>
         <span></span>
       </HeaderWrapper>

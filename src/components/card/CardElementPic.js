@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { studios } from "../api/studio";
 
 const PicWrapper = styled.div`
   display: flex;
@@ -38,7 +37,7 @@ export default function CardElementPic({
     <PicWrapper>
       {/* Das DIv unten zum Image ändern, weil ja eine source weitergegeben wird */}
       <StyledImageDiv src={imageLogo} alt={name} />
-      <StyledLink studio={studio} to={`/results/${name}`}>
+      <StyledLink studio={studio} to={`/gyms/${name}`}>
         Details {studio}
       </StyledLink>
     </PicWrapper>

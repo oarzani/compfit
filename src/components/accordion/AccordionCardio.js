@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import OpenAccordion from "../icons/OpenAccordion";
-import { studios } from "../../api/studio";
 
 const AccordionWrapper = styled.div`
   width: 100%;
@@ -27,7 +26,7 @@ const Content = styled.div`
   width: 100%;
   color: #707070;
 `;
-const ListItem = styled.li``;
+export const ListItem = styled.li``;
 
 const Arrow = styled.div`
   align-self: right;

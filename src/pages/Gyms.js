@@ -36,7 +36,8 @@ const defaultFilters = {
   flexx: false,
   six: false,
   twelve: false,
-  twentyfour: false
+  twentyfour: false,
+  price: 10
 };
 
 export default function Results({ history }) {
@@ -66,10 +67,10 @@ export default function Results({ history }) {
         <Modal
           filters={filters}
           onButtonClick={() => setShowModal(false)}
-          badgeClick={handleOptionsChange}
+          onBadgeClick={handleOptionsChange}
         />
       )}
-      <Header active={false} />
+      <Header showBack={false} />
 
       <Main>
         <FilterSection>
