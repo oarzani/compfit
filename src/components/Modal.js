@@ -62,7 +62,7 @@ export default function Modal({
   setFilters,
   onButtonClick,
   onBadgeClick,
-  handleChange
+  selectedValue
 }) {
   const badgeKeys = Object.keys(filters);
 
@@ -94,12 +94,7 @@ export default function Modal({
           />
         </BadgeContainer>
         <Title>Choose Price</Title>
-        <RangeBar
-          filters={filters}
-          active={filters[badgeKeys[10]]}
-          setFilters={setFilters}
-          onChange={handleChange}
-        />
+        <RangeBar />
         <Line />
         <Title>Select Folowing</Title>
         <BadgeContainer>

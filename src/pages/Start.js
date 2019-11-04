@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import SearchCityBar from "../components/SearchCityBar";
+
+import FindButton from "../components/SearchCityBar";
 
 const Main = styled.main`
   display: flex;
@@ -22,6 +23,7 @@ const Text = styled.h2`
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24pt;
+  text-shadow: 2px 2px 4px #000000;
 `;
 
 const SearchBarWrapper = styled.div`
@@ -53,7 +55,7 @@ export default function Start() {
           Find the gym that fits <br />
           you
         </Text>
-        <SearchCityBar />
+        <FindButton />
       </SearchBarWrapper>
       <PictureWrapper>
         <StyledImage src="/pics/Gym1.jpeg" alt="" />

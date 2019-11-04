@@ -27,13 +27,13 @@ const Headline = styled.h1`
 const StyledBackInWhite = styled(BackInWhite)`
   margin-left: 20px;
 `;
-const StyledLink = styled(Link)``;
+export const StyledLink = styled(Link)``;
 export default function Header({ showBack = true }) {
   return (
     <HeaderDiv>
       <HeaderWrapper>
         {showBack && (
-          <StyledLink to="/results">
+          <StyledLink to="/gyms">
             <StyledBackInWhite />
           </StyledLink>
         )}

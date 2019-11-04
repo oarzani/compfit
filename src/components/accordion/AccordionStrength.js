@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import OpenAccordion from "../icons/OpenAccordion";
+import { ListItem } from "./AccordionCardio";
 
 const AccordionWrapper = styled.div`
   width: 100%;
@@ -24,7 +25,6 @@ const Content = styled.div`
   display: ${props => (props.show ? "block" : "none")};
   width: 100%;
   color: #707070;
-  background: #fffcf1;
 `;
 
 const Arrow = styled.div`
@@ -50,7 +50,11 @@ export default function AccordionStrength({ strength }) {
             <OpenAccordion />
           </Arrow>
         </AccordionDiv>
-        <Content show={toggleContent}>{strength}</Content>
+        <Content show={toggleContent}>
+          {strength.map(strength => {
+            return <ListItem>{strength}</ListItem>;
+          })}
+        </Content>
       </AccordionWrapper>
     </>
   );

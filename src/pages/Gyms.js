@@ -37,10 +37,10 @@ const defaultFilters = {
   six: false,
   twelve: false,
   twentyfour: false,
-  price: 10
+  minPrice: 100
 };
 
-export default function Results({ history }) {
+export default function Gyms({ history }) {
   const [filters, setFilters] = React.useState(defaultFilters);
   const [filteredStudios, setFilteredStudios] = useState(studios);
   const [showModal, setShowModal] = React.useState(false);
@@ -66,6 +66,7 @@ export default function Results({ history }) {
       {showModal && (
         <Modal
           filters={filters}
+          setFilters={setFilters}
           onButtonClick={() => setShowModal(false)}
           onBadgeClick={handleOptionsChange}
         />
