@@ -1,6 +1,5 @@
 import { studios } from "./api/studio";
 
-// Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
 export function getStudioByFilters(filters) {
   // const selectedfilters = Object.keys(filters); // filters === ['flexx', 'six', 'twelve']
 
@@ -48,7 +47,7 @@ export function getStudioByFilters(filters) {
   });
 }
 
-// // Ein Versuch, aus Around-Spaces adaptiert src/api/restaurants.js
+// Replaces the filter-function above:
 // export function getStudioByFilters(filter) {
 //   const selectedFilters = Object.keys(); // filters === ['flexx', 'six', 'twelve']
 

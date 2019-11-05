@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ApplyButton from "./ApplyButton";
 import PropTypes from "prop-types";
-import RangeBar from "./RangeBar";
 import Badge from "./Badge";
 import BadgeDuration from "./BadgeDuration";
+import PriceBar from "./PriceBar";
 
 const Container = styled.div`
   background: white;
@@ -98,7 +98,7 @@ export default function Modal({
           />
         </BadgeContainer>
         <Title>Choose Price-Limit</Title>
-        <RangeBar />
+        <PriceBar />
         <Line />
         <Title>Select Folowing</Title>
         <BadgeContainer>
@@ -138,7 +138,6 @@ export default function Modal({
           />
         </BadgeContainer>
         <Line />
-        {/* <Title>Select Neighborhood(s)</Title> */}
 
         <SubmitButton>
           <ApplyButton onClick={onButtonClick} />

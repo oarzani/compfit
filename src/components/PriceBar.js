@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   padding: 20px;
 `;
 
-export default function RangeBar() {
+export default function PriceBar() {
   const [selectedValue, setSelectedValue] = useState("");
 
   function handleChange(event) {
@@ -21,7 +21,7 @@ export default function RangeBar() {
     <Wrapper>
       <InputRange
         formatLabel={selectedValue => `${selectedValue} €`}
-        maxValue={80}
+        maxValue={90}
         minValue={0}
         value={selectedValue}
         onChange={handleChange}
