@@ -18,7 +18,7 @@ const StyledButton = styled.button`
   height: 50px;
 `;
 
-export default function FindButton({ onSearch, onClick }) {
+export default function GoButton({ onClick }) {
   return (
     <WrappSearchBar>
       <StyledLink to="/gyms">

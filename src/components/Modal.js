@@ -25,6 +25,7 @@ const SubmitButton = styled.div`
   position: absolute;
   left: calc(50% - 22px);
   bottom: -20px;
+  cursor: pointer;
 `;
 const Backdrop = styled.div`
   display: ${props => (props.show ? "block" : "none")};
@@ -96,7 +97,7 @@ export default function Modal({
             onBadgeClick={onBadgeClick}
           />
         </BadgeContainer>
-        <Title>Choose Price</Title>
+        <Title>Choose Price-Limit</Title>
         <RangeBar />
         <Line />
         <Title>Select Folowing</Title>

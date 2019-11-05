@@ -32,11 +32,11 @@ export const studios = [
       twelve: false,
       twentyfour: true
     },
-    openingtime: "Mo-Do: 7-23 / Fr: 7-22 / Sa-So: 10-22"
+    openingtime: "Mo-Th: 7-23 / Fr: 7-22 / Sa-Su: 10-22"
   },
   {
     imageLogo:
-      "https://www.golocal.de/media/6c6903ceb3dcc0bc7020a37f138165f6/ori_9f4bce58d34e2ff6.png?utm_campaign=golocal_export&utm_medium=export_bpp&utm_source=alliance",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTdXhCx0Liy27EUNHcXI5T6YbRC5E-6-0IRI52ANRk-nvwyfCyDQ&s",
     imageSource:
       "https://intpass-eu-central-1-live02-public.s3.eu-central-1.amazonaws.com/de-live/venueHome_1024x576_KOE_156509059957126_admin.jpg",
     name: "FitnessLoft",
@@ -73,7 +73,7 @@ export const studios = [
       twelve: true,
       twentyfour: true
     },
-    openingtime: "Mo-Do: 7-23 / Fr: 7-22 / Sa-So: 10-22"
+    openingtime: "Mo-Th: 7-23 / Fr: 7-22 / Sa-Su: 10-22"
   },
   {
     imageLogo:
@@ -109,11 +109,11 @@ export const studios = [
       twelve: false,
       twentyfour: true
     },
-    openingtime: "Mo-Do: 7-23 / Fr: 7-22 / Sa-So: 10-22"
+    openingtime: "Mo-Th: 7-23 / Fr: 7-22 / Sa-Su: 10-22"
   },
   {
     imageLogo:
-      "http://media.portaldaqueixa.com/l/7a24cee54fa0c46e8db8ecdd4b9f2c35.jpg",
+      "https://better-side.com/wp-content/uploads/2019/04/16649228_10155076498164791_1462676470057436642_n.png",
     imageSource:
       "https://studiosuche.de/assets/images/chains/holmes-place/holmes-place-circle.jpg",
     name: "Holmes Place am Gürzenich",
@@ -155,7 +155,7 @@ export const studios = [
       twelve: true,
       twentyfour: true
     },
-    openingtime: "Mo-Do: 7-23 / Fr: 7-22 / Sa-So: 10-22"
+    openingtime: "Mo-Th: 7-23 / Fr: 7-22 / Sa-Su: 10-22"
   },
   {
     //Logo Größe 180 x180
@@ -194,7 +194,7 @@ export const studios = [
       twelve: true,
       twentyfour: true
     },
-    openingtime: "Mo-Do: 7-23 / Fr: 7-22 / Sa-So: 10-22"
+    openingtime: "Mo-Th: 7-23 / Fr: 7-22 / Sa-Su: 10-22"
   },
   {
     imageLogo: "http://kides.de/wp-content/uploads/2014/11/art-of-fitness.jpg",
@@ -238,7 +238,7 @@ export const studios = [
       twelve: true,
       twentyfour: true
     },
-    openingtime: "Mo-Do: 7-23 / Fr: 7-22 / Sa-So: 10-22"
+    openingtime: "Mo-Th: 7-23 / Fr: 7-22 / Sa-Su: 10-22"
   },
 
   {
@@ -288,7 +288,7 @@ export const studios = [
       twelve: false,
       twentyfour: true
     },
-    openingtime: "Mo-Do: 7-23 / Fr: 7-22 / Sa-So: 10-22"
+    openingtime: "Mo-Th: 7-23 / Fr: 7-22 / Sa-Su: 10-22"
   },
   {
     imageLogo:
@@ -339,6 +339,6 @@ export const studios = [
       twelve: true,
       twentyfour: true
     },
-    openingtime: "Mo-Do: 7-23 / Fr: 7-22 / Sa-So: 10-22"
+    openingtime: "Mo-Th: 7-23 / Fr: 7-22 / Sa-Su: 10-22"
   }
 ];

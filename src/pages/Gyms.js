@@ -71,7 +71,7 @@ export default function Gyms({ history }) {
           onBadgeClick={handleOptionsChange}
         />
       )}
-      <Header showBack={false} />
+      <Header showBack={true} />
 
       <Main>
         <FilterSection>

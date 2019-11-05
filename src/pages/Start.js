@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-
-import FindButton from "../components/SearchCityBar";
+import GoButton from "../components/GoButton";
 
 const Main = styled.main`
   display: flex;
@@ -55,7 +54,7 @@ export default function Start() {
           Find the gym that fits <br />
           you
         </Text>
-        <FindButton />
+        <GoButton />
       </SearchBarWrapper>
       <PictureWrapper>
         <StyledImage src="/pics/Gym1.jpeg" alt="" />
