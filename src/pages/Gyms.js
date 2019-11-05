@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
-import { SecondSearchbar } from "../components/SearchCityBarGrey";
+
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import { studios, getStudioByFilters } from "../api/studio";
+import { studios } from "../api/studio";
 import Modal from "../components/Modal";
+import { getStudioByFilters } from "../getStudioByFilters";
 
 const Main = styled.main`
   display: flex;
@@ -45,7 +46,6 @@ export default function Gyms({ history }) {
   const [filteredStudios, setFilteredStudios] = useState(studios);
   const [showModal, setShowModal] = React.useState(false);
 
-  // Variante unten bezieht getStudioByFilters aus der api/Studios.js
   useEffect(() => {
     setFilteredStudios(getStudioByFilters(filters));
   }, [filters]);
@@ -75,7 +75,6 @@ export default function Gyms({ history }) {
 
       <Main>
         <FilterSection>
-          <SecondSearchbar />
           <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
 

@@ -85,7 +85,7 @@ export default function StudioList({ studios }) {
 
   return (
     <List>
-      <NumberOfGyms>Results {studios.length}</NumberOfGyms>
+      <NumberOfGyms>{studios.length} Treffer</NumberOfGyms>
       {studios.map(studio => {
         return <CardComponent studio={studio} />;
       })}

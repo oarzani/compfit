@@ -6,6 +6,7 @@ import AccordionCardio from "../components/accordion/AccordionCardio";
 import AccordionStrength from "../components/accordion/AccordionStrength";
 import AccordionWellnes from "../components/accordion/AccordionWellnes";
 import { studios } from "../api/studio";
+import AccordionContracts from "../components/accordion/AccordionContracts";
 
 const Main = styled.main`
   display: flex;
@@ -46,9 +47,14 @@ const Line = styled.hr`
 `;
 const Title = styled.h1`
   color: rgb(78, 203, 224);
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  margin-top: 8px;
 `;
 
-const Adress = styled.p``;
+const Adress = styled.a`
+  margin: 2px;
+`;
 const StyledImage = styled.img`
   width: 100%;
   object-fit: cover;
@@ -74,14 +80,17 @@ export default function Details({ match }) {
         </ImageWrapper>
         <Wrapper>
           <Title>{studio.name}</Title>
-          <Adress>{studio.adress}</Adress>
+
+          <Adress href={studio.website}>Website</Adress>
           <Line />
         </Wrapper>
         <OpeneningTimesDiv>{studio.openingtime}</OpeneningTimesDiv>
+        <AccordionContracts contracts={studio.contracts} />
         <AccordionCardio cardio={studio.cardio} />
         <AccordionCourses courses={studio.courses} />
         <AccordionStrength strength={studio.strength} />
         <AccordionWellnes wellnes={studio.wellnes} />
+
         <IframeWrapper name={studio.name} iFrameSource={studio.iFrameSource}>
           <StlyedIframe title={studio.name} src={studio.iFrameSource} />
         </IframeWrapper>

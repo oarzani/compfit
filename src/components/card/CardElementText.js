@@ -5,42 +5,53 @@ const Wrapper = styled.div`
   display: flex;
 
   flex-direction: column;
-  min-height: 150px;
-  width: 60%;
-  justify-content: flex-end;
+  height: 100%;
+  width: 67%;
+  align-items: stretch;
+  /* justify-content: space-evenly; */
   margin-left: 10px;
+  font-size: 16px;
 `;
 
 const StudioName = styled.h2`
-  color: rgb(110, 94, 94);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(78, 203, 224);
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
 `;
 
-const MonthlyPrice = styled.span`
-  color: rgb(110, 94, 94);
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 10px;
-`;
-
-const Duration = styled.div`
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(110, 94, 94);
-  margin-top: 10px;
+const Information = styled.div`
+  font-family: "Roboto", sans-serif;
+  /* display: flex;
+  justify-content: flex-end; */
+  color: black;
+  margin-bottom: 15px;
+  background: transparent;
 `;
 
 const Adress = styled.div`
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(110, 94, 94);
-  margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+  color: black;
+`;
+const StyledList = styled.li`
+  font-family: "Roboto", sans-serif;
 `;
 
-export default function CardElementText({ name, price, adress, duration }) {
+export default function CardElementText({ name, price, adress, contracts }) {
   return (
     <Wrapper>
       <StudioName>{name}</StudioName>
-      <MonthlyPrice>{`Preis Monatlich: ${price} €`} </MonthlyPrice>
-      <Duration>{`Vertragslaufzeit: ${duration} Monate`}</Duration>
-      <Adress>{adress}</Adress>
+
+      <Information>
+        <b>Membership(s)</b>
+        <hr></hr>
+        {contracts.map(contracts => {
+          return <StyledList>{contracts}</StyledList>;
+        })}
+      </Information>
+
+      <Adress>
+        <b>{adress}</b>
+      </Adress>
     </Wrapper>
   );
 }

@@ -26,7 +26,7 @@ const Text = styled.h2`
   text-shadow: 2px 2px 4px #000000;
 `;
 
-const SearchBarWrapper = styled.div`
+export const SearchBarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background: transparent;

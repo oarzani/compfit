@@ -47,10 +47,10 @@ const BadgeContainer = styled.div`
 const Title = styled.h4`
   color: grey;
   font-family: Arial, Helvetica, sans-serif;
-  align-self: left;
+  text-align: center;
 `;
 
-const Line = styled.hr`
+export const Line = styled.hr`
   color: grey;
   width: 80%;
 `;
@@ -69,7 +69,10 @@ export default function Modal({
   return (
     <>
       <Container show={show}>
-        <Title>Choose Contract Duration</Title>
+        <Title>
+          Choose Contract Duration <br />
+          (Months)
+        </Title>
         {/* <DurationBar /> */}
         <BadgeContainer>
           <BadgeDuration
