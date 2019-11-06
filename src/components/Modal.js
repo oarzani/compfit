@@ -60,10 +60,9 @@ export default function Modal({
   show = true,
   hideBackdrop,
   filters,
-  setFilters,
+  onPriceChange,
   onButtonClick,
-  onBadgeClick,
-  selectedValue
+  onBadgeClick
 }) {
   const badgeKeys = Object.keys(filters);
 
@@ -98,7 +97,11 @@ export default function Modal({
           />
         </BadgeContainer>
         <Title>Choose Price-Limit</Title>
-        <PriceBar />
+        <PriceBar
+          value={filters.price}
+          onChange={value => console.log(value)}
+          onPriceChange={onPriceChange}
+        />
         <Line />
         <Title>Select Folowing</Title>
         <BadgeContainer>

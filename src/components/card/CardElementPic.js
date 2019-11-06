@@ -11,7 +11,7 @@ const PicWrapper = styled.div`
   width: 33%;
   max-width: 240px;
 `;
-// height used to be 90vh before.
+
 const StyledImageDiv = styled.img`
   height: 150px;
   max-width: 100%;
@@ -25,19 +25,9 @@ export const StyledLink = styled(Link)`
   font-size: 12pt;
 `;
 //Show
-export default function CardElementPic({
-  studio,
-  imageLogo,
-  name,
-  adress,
-  strength,
-  wellnes,
-  courses,
-  imageSource
-}) {
+export default function CardElementPic({ studio, imageLogo, name }) {
   return (
     <PicWrapper>
-      {/* Das DIv unten zum Image ändern, weil ja eine source weitergegeben wird */}
       <StyledImageDiv src={imageLogo} alt={name} />
       <StyledLink studio={studio} to={`/gyms/${name}`}>
         Details {studio}

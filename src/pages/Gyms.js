@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import { studios } from "../api/studio";
+import { studios } from "../api/studios";
 import Modal from "../components/Modal";
 import { getStudioByFilters } from "../getStudioByFilters";
 
@@ -51,12 +51,18 @@ export default function Gyms({ history }) {
   }, [filters]);
 
   function handleOptionsChange(name, value) {
-    let newFilters = { ...filters };
+    const newFilters = { ...filters };
 
     newFilters[name] = !value;
 
     setFilters(newFilters);
     console.log(name, value);
+  }
+
+  function handlePriceChange(price) {
+    const newFilters = { ...filters };
+    newFilters.price = price;
+    setFilters(newFilters);
   }
 
   console.log(history);
@@ -69,6 +75,7 @@ export default function Gyms({ history }) {
           setFilters={setFilters}
           onButtonClick={() => setShowModal(false)}
           onBadgeClick={handleOptionsChange}
+          onPriceChange={handlePriceChange}
         />
       )}
       <Header showBack={true} />

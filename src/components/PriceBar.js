@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
 import styled from "styled-components";
@@ -9,22 +9,15 @@ const Wrapper = styled.div`
   padding: 20px;
 `;
 
-export default function PriceBar() {
-  const [selectedValue, setSelectedValue] = useState("");
-
-  function handleChange(event) {
-    // console.log(event);
-    setSelectedValue(event);
-  }
-
+export default function PriceBar({ value, onPriceChange }) {
   return (
     <Wrapper>
       <InputRange
-        formatLabel={selectedValue => `${selectedValue} €`}
+        formatLabel={value => `${value} €`}
         maxValue={90}
         minValue={0}
-        value={selectedValue}
-        onChange={handleChange}
+        value={value}
+        onChange={onPriceChange}
       />
     </Wrapper>
   );

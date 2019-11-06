@@ -18,18 +18,11 @@ export default function CardComponent({ studio, props, name }) {
   return (
     <CardWrapper>
       <StyledLink studio={studio} to={`/gyms/${name}`} />
-      <CardElementPic
-        imageLogo={studio.imageLogo}
-        name={studio.name}
-        cardio={studio.cardio}
-        adress={studio.adress}
-      />
+      <CardElementPic imageLogo={studio.imageLogo} name={studio.name} />
       <CardElementText
         name={studio.name}
-        price={studio.price}
-        duration={studio.duration}
-        adress={studio.adress}
         contracts={studio.contracts}
+        adress={studio.adress}
       />
     </CardWrapper>
   );

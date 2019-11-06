@@ -1,5 +1,5 @@
 import React from "react";
-import RangeBar from "../components/RangeBar";
+import RangeBar from "../components/PriceBar";
 import FilterBar from "../components/FilterBar";
 
 export default {
