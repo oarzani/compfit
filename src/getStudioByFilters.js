@@ -1,4 +1,4 @@
-import { studios } from "./api/studios";
+import { studios } from "./api/studiosads";
 
 export function getStudioByFilters(filters) {
   // const selectedfilters = Object.keys(filters); // filters === ['flexx', 'six', 'twelve']
