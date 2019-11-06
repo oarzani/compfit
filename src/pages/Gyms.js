@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
-import { SecondSearchbar } from "../components/SearchCityBarGrey";
+
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import { studios, getStudioByFilters } from "../api/studio";
+import { studios } from "../api/studios";
 import Modal from "../components/Modal";
+import { getStudioByFilters } from "../getStudioByFilters";
 
 const Main = styled.main`
   display: flex;
@@ -37,26 +38,31 @@ const defaultFilters = {
   six: false,
   twelve: false,
   twentyfour: false,
-  price: 10
+  price: 90
 };
 
-export default function Results({ history }) {
+export default function Gyms({ history }) {
   const [filters, setFilters] = React.useState(defaultFilters);
   const [filteredStudios, setFilteredStudios] = useState(studios);
   const [showModal, setShowModal] = React.useState(false);
 
-  // Variante unten bezieht getStudioByFilters aus der api/Studios.js
   useEffect(() => {
     setFilteredStudios(getStudioByFilters(filters));
   }, [filters]);
 
   function handleOptionsChange(name, value) {
-    let newFilters = { ...filters };
+    const newFilters = { ...filters };
 
     newFilters[name] = !value;
 
     setFilters(newFilters);
     console.log(name, value);
+  }
+
+  function handlePriceChange(price) {
+    const newFilters = { ...filters };
+    newFilters.price = price;
+    setFilters(newFilters);
   }
 
   console.log(history);
@@ -66,15 +72,16 @@ export default function Results({ history }) {
       {showModal && (
         <Modal
           filters={filters}
+          setFilters={setFilters}
           onButtonClick={() => setShowModal(false)}
           onBadgeClick={handleOptionsChange}
+          onPriceChange={handlePriceChange}
         />
       )}
-      <Header showBack={false} />
+      <Header showBack={true} />
 
       <Main>
         <FilterSection>
-          <SecondSearchbar />
           <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
 

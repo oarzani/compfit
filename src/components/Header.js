@@ -1,10 +1,10 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import BackInWhite from "./icons/BackInWhite";
 import { Link } from "react-router-dom";
 
 const HeaderDiv = styled.header`
-  height: 65px;
+  height: 60px;
   background: rgb(78, 203, 224);
   width: 100%;
   display: flex;
@@ -12,7 +12,7 @@ const HeaderDiv = styled.header`
 `;
 
 const HeaderWrapper = styled.div`
-  width: 95%;
+  width: 90%;
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -27,13 +27,13 @@ const Headline = styled.h1`
 const StyledBackInWhite = styled(BackInWhite)`
   margin-left: 20px;
 `;
-const StyledLink = styled(Link)``;
+export const StyledLink = styled(Link)``;
 export default function Header({ showBack = true }) {
   return (
     <HeaderDiv>
       <HeaderWrapper>
         {showBack && (
-          <StyledLink to="/results">
+          <StyledLink to="/gyms">
             <StyledBackInWhite />
           </StyledLink>
         )}

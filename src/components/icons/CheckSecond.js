@@ -8,6 +8,7 @@ export default function CheckSecond({ className }) {
       height="19.469"
       viewBox="0 0 20 19.469"
       className={className}
+      fill="green"
     >
       <path
         id="check-solid"

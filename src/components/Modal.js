@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ApplyButton from "./ApplyButton";
 import PropTypes from "prop-types";
-import RangeBar from "./RangeBar";
 import Badge from "./Badge";
 import BadgeDuration from "./BadgeDuration";
+import PriceBar from "./PriceBar";
 
 const Container = styled.div`
   background: white;
@@ -25,6 +25,7 @@ const SubmitButton = styled.div`
   position: absolute;
   left: calc(50% - 22px);
   bottom: -20px;
+  cursor: pointer;
 `;
 const Backdrop = styled.div`
   display: ${props => (props.show ? "block" : "none")};
@@ -47,10 +48,10 @@ const BadgeContainer = styled.div`
 const Title = styled.h4`
   color: grey;
   font-family: Arial, Helvetica, sans-serif;
-  align-self: left;
+  text-align: center;
 `;
 
-const Line = styled.hr`
+export const Line = styled.hr`
   color: grey;
   width: 80%;
 `;
@@ -59,17 +60,19 @@ export default function Modal({
   show = true,
   hideBackdrop,
   filters,
-  setFilters,
+  onPriceChange,
   onButtonClick,
-  onBadgeClick,
-  handleChange
+  onBadgeClick
 }) {
   const badgeKeys = Object.keys(filters);
 
   return (
     <>
       <Container show={show}>
-        <Title>Choose Contract Duration</Title>
+        <Title>
+          Choose Contract Duration <br />
+          (Months)
+        </Title>
         {/* <DurationBar /> */}
         <BadgeContainer>
           <BadgeDuration
@@ -93,12 +96,11 @@ export default function Modal({
             onBadgeClick={onBadgeClick}
           />
         </BadgeContainer>
-        <Title>Choose Price</Title>
-        <RangeBar
-          filters={filters}
-          active={filters[badgeKeys[10]]}
-          setFilters={setFilters}
-          onChange={handleChange}
+        <Title>Choose Price-Limit</Title>
+        <PriceBar
+          value={filters.price}
+          onChange={value => console.log(value)}
+          onPriceChange={onPriceChange}
         />
         <Line />
         <Title>Select Folowing</Title>
@@ -139,7 +141,6 @@ export default function Modal({
           />
         </BadgeContainer>
         <Line />
-        {/* <Title>Select Neighborhood(s)</Title> */}
 
         <SubmitButton>
           <ApplyButton onClick={onButtonClick} />
