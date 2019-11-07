@@ -5,8 +5,10 @@ import AccordionCourses from "../components/accordion/AccordionCourses";
 import AccordionCardio from "../components/accordion/AccordionCardio";
 import AccordionStrength from "../components/accordion/AccordionStrength";
 import AccordionWellnes from "../components/accordion/AccordionWellnes";
-import { studios } from "../api/studios";
+// import { studios } from "../api/studios";
 import AccordionContracts from "../components/accordion/AccordionContracts";
+import { getStudios } from "../getStudioByFilters";
+import { async } from "q";
 
 const Main = styled.main`
   display: flex;
@@ -67,6 +69,7 @@ const StlyedIframe = styled.iframe`
 `;
 
 export default function Details({ match }) {
+  const studios = getStudios();
   const studio = studios.find(
     studio => studio.name === match.params.studioName
   );

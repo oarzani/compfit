@@ -6,7 +6,7 @@ import styled from "styled-components";
 import StudioList from "../components/StudioList";
 
 import Modal from "../components/Modal";
-import { getStudioByFilters, getStudios } from "../getStudioByFilters";
+import { getStudioByFilters } from "../getStudioByFilters";
 
 const Main = styled.main`
   display: flex;
