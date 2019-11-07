@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "fake-api": "0.0.1",
     "proptypes": "^1.1.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -43,5 +44,6 @@
     "@storybook/react": "^5.2.3",
     "eslint": "^6.6.0",
     "prettier": "^1.18.2"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }
