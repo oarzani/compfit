@@ -1,7 +1,5 @@
-// import { studios } from "./api/studios";
-
 export function getStudios() {
-  const promise = fetch("http://localhost:3333/restaurants");
+  const promise = fetch("http://localhost:3000/studios");
   return promise.then(response => response.json());
 }
 function waitTwoSeconds() {
