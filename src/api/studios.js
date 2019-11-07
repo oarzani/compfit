@@ -1,6 +1,5 @@
 export const studios = [
   {
-    // Logo Größe 250 250px
     imageLogo:
       "https://www.fitnessfirst.de/modules/custom/ff_custom/images/logo.png",
     imageSource:

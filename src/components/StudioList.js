@@ -14,11 +14,11 @@ const NumberOfGyms = styled.h3`
   font-family: Arial, Helvetica, sans-serif;
 `;
 
-export default function StudioList({ studios }) {
+export default function StudioList({ filteredStudios }) {
   return (
     <List>
-      <NumberOfGyms>{studios.length} Results</NumberOfGyms>
-      {studios.map(studio => {
+      <NumberOfGyms>{filteredStudios.length} Results</NumberOfGyms>
+      {filteredStudios.map(studio => {
         return <CardComponent studio={studio} />;
       })}
     </List>
