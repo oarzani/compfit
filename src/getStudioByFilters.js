@@ -1,6 +1,18 @@
-import { studios } from "./api/studios";
+// import { studios } from "./api/studios";
 
-export function getStudioByFilters(filters) {
+export function getStudios() {
+  const promise = fetch("http://localhost:3333/restaurants");
+  return promise.then(response => response.json());
+}
+function waitTwoSeconds() {
+  return new Promise(resolve => {
+    setTimeout(resolve, 10);
+  });
+}
+
+export async function getStudioByFilters(filters) {
+  await waitTwoSeconds();
+  const studios = await getStudios();
   // const selectedfilters = Object.keys(filters); // filters === ['flexx', 'six', 'twelve']
 
   return studios.filter(studio => {
