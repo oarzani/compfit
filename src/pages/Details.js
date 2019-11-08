@@ -8,7 +8,6 @@ import AccordionWellnes from "../components/accordion/AccordionWellnes";
 // import { studios } from "../api/studios";
 import AccordionContracts from "../components/accordion/AccordionContracts";
 import { getStudios } from "../getStudioByFilters";
-import { async } from "q";
 
 const Main = styled.main`
   display: flex;
@@ -67,9 +66,14 @@ const StlyedIframe = styled.iframe`
   width: 100%;
   height: 450px;
 `;
-
-export default function Details({ match }) {
-  const studios = getStudios();
+function waitTwoSeconds() {
+  return new Promise(resolve => {
+    setTimeout(resolve, 10);
+  });
+}
+export default async function Details({ match }) {
+  await waitTwoSeconds();
+  const studios = await getStudios();
   const studio = studios.find(
     studio => studio.name === match.params.studioName
   );
