@@ -9,8 +9,9 @@ const CardWrapper = styled.article`
   width: 90%;
   margin: 10px;
   border-radius: 2em;
-  border: 3px solid rgb(110, 94, 94);
+  border: 3px solid #4ecbe0;
   padding: 10px;
+  background: white;
 `;
 
 //To-Do: Link property to Details
