@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import OpenAccordion from "../icons/OpenAccordion";
+import CheckSecond from "../icons/CheckSecond";
 
 const AccordionWrapper = styled.div`
   width: 100%;
@@ -24,11 +25,12 @@ const Content = styled.div`
   flex-direction: column;
   width: 100%;
 `;
-export const ListItem = styled.ul`
+export const ListItem = styled.li`
   font-size: 16pt;
   font-family: "Roboto", sans-serif;
   /* font-style: italic; */
   color: rgb(110, 94, 94);
+  margin-top: 3px;
 `;
 
 const Arrow = styled.div`
@@ -36,6 +38,9 @@ const Arrow = styled.div`
   transform: ${props => (props.show ? "rotate(180deg)" : "rotate(0deg)")};
   transition: all 0.2s;
   /* margin-left: 100px; */
+`;
+export const Check = styled(CheckSecond)`
+  margin-left: 10px;
 `;
 
 export default function AccordionCardio({ cardio }) {
@@ -58,7 +63,12 @@ export default function AccordionCardio({ cardio }) {
         </AccordionDiv>
         <Content show={toggleContent}>
           {cardio.map(cardio => {
-            return <ListItem>{cardio}</ListItem>;
+            return (
+              <ListItem>
+                {cardio}
+                <Check />
+              </ListItem>
+            );
           })}
         </Content>
       </AccordionWrapper>

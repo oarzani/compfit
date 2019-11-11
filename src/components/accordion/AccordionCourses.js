@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import OpenAccordion from "../icons/OpenAccordion";
-import { ListItem, AccordionDiv } from "./AccordionCardio";
+import { ListItem, AccordionDiv, Check } from "./AccordionCardio";
 
 const AccordionWrapper = styled.div`
   width: 100%;
@@ -38,7 +38,12 @@ export default function AccordionCourses({ courses }) {
         </AccordionDiv>
         <Content show={toggleContent}>
           {courses.map(courses => {
-            return <ListItem>{courses}</ListItem>;
+            return (
+              <ListItem>
+                {courses}
+                <Check />
+              </ListItem>
+            );
           })}
         </Content>
       </AccordionWrapper>

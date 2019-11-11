@@ -11,7 +11,7 @@ const List = styled.section`
   background: transparent;
 `;
 const NumberOfGyms = styled.h3`
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto" sans-serif;
   color: rgb(110, 94, 94);
   font-style: bold;
 `;
