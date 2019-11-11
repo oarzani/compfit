@@ -41,7 +41,7 @@ const Backdrop = styled.div`
 const BadgeContainer = styled.div`
   width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 `;
 

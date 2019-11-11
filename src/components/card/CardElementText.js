@@ -23,14 +23,14 @@ const Information = styled.div`
   font-family: "Roboto", sans-serif;
   /* display: flex;
   justify-content: flex-end; */
-  color: black;
+  color: rgb(110, 94, 94);
   margin-bottom: 15px;
   background: transparent;
 `;
 
 const Adress = styled.div`
   font-family: "Roboto", sans-serif;
-  color: black;
+  color: rgb(110, 94, 94);
 `;
 const StyledList = styled.li`
   font-family: "Roboto", sans-serif;

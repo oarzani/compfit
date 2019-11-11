@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import GoButton from "../components/GoButton";
+import Compfit, { Teaser } from "../components/Animation";
 
 const Main = styled.main`
   display: flex;
@@ -18,14 +19,7 @@ const PictureWrapper = styled.div`
   margin-top: 10px;
 `;
 
-const Text = styled.h2`
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24pt;
-  text-shadow: 2px 2px 4px #000000;
-`;
-
-export const SearchBarWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background: transparent;
@@ -49,13 +43,12 @@ export default function Start() {
     <Main>
       <Header showBack={false} />
 
-      <SearchBarWrapper>
-        <Text>
-          Find the gym that fits <br />
-          you
-        </Text>
+      <Wrapper>
+        <Compfit />
+
+        <Teaser />
         <GoButton />
-      </SearchBarWrapper>
+      </Wrapper>
       <PictureWrapper>
         <StyledImage src="/pics/Gym1.jpeg" alt="" />
       </PictureWrapper>

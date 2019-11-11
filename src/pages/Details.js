@@ -33,6 +33,9 @@ const IframeWrapper = styled.div`
 
 const OpeneningTimesDiv = styled.article`
   margin-bottom: 20px;
+  color: rgb(110, 94, 94);
+  font-size: 16pt;
+  font-style: "Roboto", sans-serif;
 `;
 
 const Wrapper = styled.div`
@@ -54,6 +57,9 @@ const Title = styled.h1`
 
 const Adress = styled.a`
   margin: 2px;
+  color: rgb(110, 94, 94);
+  font-size: 16pt;
+  font-style: "Roboto", sans-serif;
 `;
 const StyledImage = styled.img`
   width: 100%;

@@ -12,6 +12,8 @@ const List = styled.section`
 `;
 const NumberOfGyms = styled.h3`
   font-family: Arial, Helvetica, sans-serif;
+  color: rgb(110, 94, 94);
+  font-style: bold;
 `;
 
 export default function StudioList({ studios }) {
