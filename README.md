@@ -19,5 +19,6 @@ It comes better: Want to have a gym with dynamic contract-terms and one that has
 ### Miscellaneous
 
 - This app is not commercial
-- The used data contains a lot of dummy data was developed as part of an Coding-Bootcamp at neuefische GmbH
+- The used data contains a lot of dummy data
+- The app was developed as part of an Coding-Bootcamp at neuefische GmbH
 - This app uses MIT License
