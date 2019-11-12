@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-import { studios } from "../api/studios";
+
 import Modal from "../components/Modal";
 import { getStudioByFilters } from "../getStudioByFilters";
 
@@ -16,14 +16,13 @@ const Main = styled.main`
   width: 100%;
   height: 100%;
   position: relative;
-  /* background: rgb(110, 94, 94); */
 `;
 
 const FilterSection = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* height: 30%; */
+  height: 30%;
   align-items: center;
   margin-bottom: 10px;
 `;
@@ -44,11 +43,20 @@ const defaultFilters = {
 
 export default function Gyms({ history }) {
   const [filters, setFilters] = React.useState(defaultFilters);
-  const [filteredStudios, setFilteredStudios] = useState(studios);
+
+  // const studios = getStudios();
+  const [filteredStudios, setFilteredStudios] = useState([]);
   const [showModal, setShowModal] = React.useState(false);
 
+  // useEffect(() => {
+  //   setFilteredStudios(getStudioByFilters(filters));
+  // }, [filters]);
+
   useEffect(() => {
-    setFilteredStudios(getStudioByFilters(filters));
+    getStudioByFilters(filters).then(newFilteredStudios => {
+      setFilteredStudios(newFilteredStudios);
+      //setLoading(false);
+    });
   }, [filters]);
 
   function handleOptionsChange(name, value) {
@@ -86,7 +94,7 @@ export default function Gyms({ history }) {
           <FilterBar onClick={() => setShowModal(!showModal)} />
         </FilterSection>
 
-        <StudioList filters={filters} studios={filteredStudios} />
+        <StudioList filters={filters} filteredStudios={filteredStudios} />
       </Main>
     </>
   );
