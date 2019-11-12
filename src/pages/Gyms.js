@@ -22,7 +22,7 @@ const FilterSection = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 30%;
+
   align-items: center;
   margin-bottom: 10px;
 `;
