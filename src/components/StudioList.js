@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CardComponent from "./card/CardComponent";
+import PropTypes from "prop-types";
 
 const List = styled.section`
   flex-grow: 1;
@@ -26,3 +27,6 @@ export default function StudioList({ filteredStudios }) {
     </List>
   );
 }
+StudioList.propTypes = {
+  filteredStudios: PropTypes.array
+};

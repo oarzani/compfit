@@ -2,6 +2,7 @@ import React from "react";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   width: 80%;
@@ -22,3 +23,8 @@ export default function PriceBar({ value, onPriceChange }) {
     </Wrapper>
   );
 }
+
+PriceBar.propTypes = {
+  value: PropTypes.number,
+  onPriceChange: PropTypes.func
+};

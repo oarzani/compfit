@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import FilterBar from "../components/FilterBar";
 import styled from "styled-components";
 import StudioList from "../components/StudioList";
-
+import PropTypes from "prop-types";
 import Modal from "../components/Modal";
 import { getStudioByFilters } from "../getStudioByFilters";
 
@@ -99,3 +99,16 @@ export default function Gyms({ history }) {
     </>
   );
 }
+
+Gyms.propTypes = {
+  showModal: PropTypes.bool,
+  setShowModal: PropTypes.func,
+  showBack: PropTypes.bool,
+  onClick: PropTypes.func,
+  onBadgeClick: PropTypes.func,
+  onPriceChange: PropTypes.func,
+  onButtonClick: PropTypes.func,
+  filters: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+  setFilters: PropTypes.func,
+  value: PropTypes.bool
+};

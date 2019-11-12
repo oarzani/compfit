@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CardElementPic, { StyledLink } from "./CardElementPic";
 import CardElementText from "./CardElementText";
+import PropTypes from "prop-types";
 
 const CardWrapper = styled.article`
   display: flex;
@@ -14,8 +15,7 @@ const CardWrapper = styled.article`
   background: white;
 `;
 
-//To-Do: Link property to Details
-export default function CardComponent({ studio, props, name }) {
+export default function CardComponent({ studio, name }) {
   return (
     <CardWrapper>
       <StyledLink studio={studio} to={`/gyms/${name}`} />
@@ -28,5 +28,11 @@ export default function CardComponent({ studio, props, name }) {
     </CardWrapper>
   );
 }
-
+CardComponent.propTypes = {
+  studio: PropTypes.object,
+  name: PropTypes.string,
+  contracts: PropTypes.array,
+  imageLogo: PropTypes.string,
+  adress: PropTypes.string
+};
 // Proptypes: Object req.

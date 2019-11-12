@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import GoButton from "../components/GoButton";
 import Compfit, { Teaser } from "../components/Animation";
+import PropTypes from "prop-types";
 
 const Main = styled.main`
   display: flex;
@@ -58,3 +59,7 @@ export default function Start() {
     </Main>
   );
 }
+
+Start.propTypes = {
+  showBack: PropTypes.bool
+};

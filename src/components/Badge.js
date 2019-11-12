@@ -34,7 +34,8 @@ export default function Badge({ name, active, onBadgeClick }) {
 }
 
 Badge.propTypes = {
+  name: PropTypes.string,
   active: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func
+
+  onBadgeClick: PropTypes.func
 };

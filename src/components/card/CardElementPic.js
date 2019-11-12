@@ -42,3 +42,8 @@ export default function CardElementPic({ studio, imageLogo, name }) {
     </PicWrapper>
   );
 }
+CardElementPic.propTypes = {
+  studio: PropTypes.object,
+  imageLogo: PropTypes.string,
+  name: PropTypes.string
+};

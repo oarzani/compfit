@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Filter from "./icons/Filter";
+import PropTypes from "prop-types";
 
 const FitlerButton = styled.div`
   background: rgb(78, 203, 224);
@@ -26,3 +27,6 @@ export default function FilterBar({ onClick }) {
     </FitlerButton>
   );
 }
+FilterBar.propTypes = {
+  onClick: PropTypes.func
+};
