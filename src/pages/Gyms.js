@@ -39,7 +39,7 @@ const defaultFilters = {
   six: false,
   twelve: false,
   twentyfour: false,
-  price: 90
+  price: 0
 };
 
 export default function Gyms({ history }) {

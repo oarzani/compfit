@@ -8,12 +8,13 @@ const PicWrapper = styled.div`
   flex-direction: column;
   background: white;
   margin-right: 10px;
-  width: 33%;
+  width: 30%;
   max-width: 240px;
 `;
 
 const StyledImageDiv = styled.img`
   height: 150px;
+
   max-width: 100%;
 
   object-position: top center;
@@ -24,11 +25,17 @@ export const StyledLink = styled(Link)`
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12pt;
 `;
-//Show
+
+const StyledLine = styled.hr`
+  color: grey;
+  margin: auto;
+`;
+
 export default function CardElementPic({ studio, imageLogo, name }) {
   return (
     <PicWrapper>
       <StyledImageDiv src={imageLogo} alt={name} />
+      <StyledLine />
       <StyledLink studio={studio} to={`/gyms/${name}`}>
         Details {studio}
       </StyledLink>

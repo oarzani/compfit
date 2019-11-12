@@ -8,7 +8,7 @@ const FitlerButton = styled.div`
   border: none;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 98%;
   height: 37px;
   cursor: pointer;
   margin-top: 10px;

@@ -12,10 +12,10 @@ export const studios = [
     courses: ["Zumba  ", "Yoga", "Body-Pump"],
     wellnes: ["Spa", "Sauna"],
     cardio: ["Rowing", "Stepper"],
-    strength: ["Hanteln", "Geräte"],
+    strength: ["Free weights", "Strength-Devices"],
 
     neighbourhood: "Ehrenfeld",
-    adress: "Venloer Str. 389 50825 Cologne",
+    adress: "Venloer Str. 389, 50825 Cologne",
     website: "https://www.fitnessfirst.de/clubs/koeln-ehrenfeld",
     iFrameSource:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.537297175328!2d6.913156715749572!3d50.950769579547604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf253932ab8b01%3A0xeddd7d742fd472e3!2sVenloer%20Str.%20389%2C%2050825%20K%C3%B6ln!5e0!3m2!1sde!2sde!4v1572284671677!5m2!1sde!2sde",
@@ -48,15 +48,15 @@ export const studios = [
       "EDM",
       "Bodypump",
       "Bodyshape",
-      "Boxen",
-      "Bauch Beine Po"
+      "Boxing",
+      "Bums tums and legs"
     ],
     wellnes: ["Sauna"],
-    cardio: ["Laufband", "Stepper", "Crosstrainer", "Fahrad-Ergometer"],
-    strength: ["Kraftgeräte", "Hantelbereich"],
+    cardio: ["Tread mill", "Stepper", "Crosstrainer", "Fahrad-Ergometer"],
+    strength: ["Strength-Devices", "Free weights"],
 
     neighbourhood: ["Altstadt-Nord"],
-    adress: "Eigelstein 80-88 50668 Cologne",
+    adress: "Eigelstein 80-88, 50668 Cologne",
     website: "https://fitnessloft.de/fitnessstudios/koeln/",
     iFrameSource:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.6703135834955!2d6.955026715749513!3d50.94830987954713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25a31a4fb843%3A0x9d9f19559be08f16!2sEigelstein%2080-88%2C%2050668%20K%C3%B6ln!5e0!3m2!1sde!2sde!4v1572284825454!5m2!1sde!2sde",
@@ -84,13 +84,13 @@ export const studios = [
     contracts: ["24 Months  19,90€ p.Month"],
     price: [19.9],
 
-    courses: ["CyberKurse", "Crossworkout", "Pre-Running", "Spinning"],
+    courses: ["CyberCourses", "Crossworkout", "Pre-Running", "Spinning"],
     wellnes: [],
-    cardio: ["Stepper", "Rudern", "Crosstrainer"],
-    strength: ["Hantelbereich", "Kraftgeräte", "Zirkeltraining"],
+    cardio: ["Stepper", "Rowing", "Crosstrainer"],
+    strength: ["Free weights", "Strength-Devices", "Circuit training"],
 
     neighbourhood: ["Innenstadt"],
-    adress: "Hohe Str. 62-68 50667 Cologne",
+    adress: "Hohe Str. 62-68, 50667 Cologne",
     website:
       "https://www.mcfit.com/de/studios/studiosuche/studiodetails/studio/koeln-altstadt/",
     iFrameSource:
@@ -126,17 +126,17 @@ export const studios = [
     courses: ["Yoga", "Bodypump", "Aerobic", "TaiChi", "Zumba", "Bodycombat"],
     wellnes: ["Pool", "Sauna", "Spa", "Solarium", "Massage"],
     cardio: [
-      "Laufband",
+      "Tread mill",
       "Stepper",
       "Crosstrainer",
       "Fahrad-Ergometer",
       "Spinning-Bike",
-      "Ruder-Ergometer"
+      "Rowing"
     ],
-    strength: ["Hantelbereich", "Zirkeltraining", "Kraftgeräte"],
+    strength: ["Free weights", "Circuit training", "Strength-Devices"],
 
     neighbourhood: ["Altstadt-Nord", "Innenstadt"],
-    adress: "Gürzenichstraße 6 50667 Cologne",
+    adress: "Gürzenichstraße 6, 50667 Cologne",
     website: "http://holmesplace.de/am-guerzenich.c/de/",
     iFrameSource:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2514.331000691899!2d6.955005515749042!3d50.936091379545346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25b1fb85118b%3A0xfedd06dafc5dfef5!2zR8O8cnplbmljaHN0cmHDn2UgNiwgNTA2NjcgS8O2bG4!5e0!3m2!1sde!2sde!4v1572285025806!5m2!1sde!2sde",
@@ -171,8 +171,8 @@ export const studios = [
 
     courses: ["Bodypup", "Yin-Yoga", "Pilates", "RehaRücken"],
     wellnes: ["Entspannungsraum", "Massagen", "Sauna"],
-    cardio: ["Laufband", "Ruder-Ergometer", "Fahrradergometer"],
-    strength: ["Hantelbereich", "Kraftgeräte", "Zirkeltraining"],
+    cardio: ["Tread mill", "Rowing", "Spinning-Bike"],
+    strength: ["Free weights", "Strength-Devices", "Circuit training"],
 
     neighbourhood: ["Innenstadt"],
     adress: "Mittelstraße 12, 50672 Cologne",
@@ -194,8 +194,9 @@ export const studios = [
     },
     openingtime: "Mo-Th: 7-23 / Fr: 7-22 / Sa-Su: 10-22"
   },
+  // "http://kides.de/wp-content/uploads/2014/11/art-of-fitness.jpg"
   {
-    imageLogo: "http://kides.de/wp-content/uploads/2014/11/art-of-fitness.jpg",
+    imageLogo: "https://images.fitpass.co.in/studio_logo_D29575FFAD1913.png",
     imageSource:
       "https://files.eversports.com/a8d82428-a4e2-4e6b-9e50-c1c5b3098e84/art-of-fitness-1-x-large.jpg",
     name: "Art of Fitness",
@@ -209,14 +210,14 @@ export const studios = [
     courses: ["Yoga", "Bodypump", "Aerobic", "TaiChi", "Zumba", "Bodycombat"],
     wellnes: ["Sauna", "Solarium", "Spa"],
     cardio: [
-      "Laufband",
+      "Tread mill",
       "Stepper",
       "Crosstrainer",
       "Fahrad-Ergometer",
       "Spinning-Bike",
-      "Ruder-Ergometer"
+      "Rowing"
     ],
-    strength: ["Hantelbereich", "Kraftgeräte", "Zirkeltraining"],
+    strength: ["Free weights", "Strength-Devices", "Circuit training"],
 
     neighbourhood: ["Ehrenfeld"],
     adress: "Maarweg 149-152 50825 Cologne",
@@ -243,7 +244,7 @@ export const studios = [
     imageLogo:
       "https://www.fitnessfirst.de/modules/custom/ff_custom/images/logo.png",
     imageSource: "src",
-    name: "Fittness First-Innenstadt",
+    name: "Fitness First -Innenstadt",
     contracts: ["24 Months  40€ p.Month"],
     price: [40],
 
@@ -258,14 +259,14 @@ export const studios = [
 
     wellnes: ["Spa", "Sauna", "Solarioum", "Massagen "],
     cardio: [
-      "Laufband",
+      "Tread mill",
       "Stepper",
       "Crosstrainer",
       "Fahrad-Ergometer",
       "Spinning-Bike",
-      "Ruder-Ergometer"
+      "Rowing"
     ],
-    strength: ["Hantelbereich", "Kraftgeräte"],
+    strength: ["Free weights", "Strength-Devices"],
 
     neighbourhood: ["Innenstadt"],
     adress: "Schildergasse 94 50667 Cologne",
@@ -308,14 +309,14 @@ export const studios = [
     ],
     wellnes: ["Spa", "Sauna", "Solarioum", "Massagen "],
     cardio: [
-      "Laufband",
+      "Tread mill",
       "Stepper",
       "Crosstrainer",
       "Fahrad-Ergometer",
       "Spinning-Bike",
-      "Ruder-Ergometer"
+      "Rowing"
     ],
-    strength: ["Hantelbereich", "Kraftgeräte", "Zirkeltraining"],
+    strength: ["Free weights", "Strength-Devices", "Circuit training"],
 
     neighbourhood: ["Altstadt-Süd"],
     adress: "Hohenstaufenring 30-32, 50674 Cologne",
