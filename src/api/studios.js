@@ -1,4 +1,4 @@
-export const studios = [
+export const  = [
   {
     imageLogo:
       "https://www.fitnessfirst.de/modules/custom/ff_custom/images/logo.png",

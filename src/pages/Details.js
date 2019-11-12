@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import AccordionCourses from "../components/accordion/AccordionCourses";
@@ -66,42 +66,48 @@ const StlyedIframe = styled.iframe`
   width: 100%;
   height: 450px;
 `;
-function waitTwoSeconds() {
-  return new Promise(resolve => {
-    setTimeout(resolve, 10);
-  });
-}
-export default async function Details({ match }) {
-  await waitTwoSeconds();
-  const studios = await getStudios();
+
+export default function Details({ match }) {
+  const [studios, setStudios] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const studios = await getStudios();
+      setStudios(studios);
+    }
+    fetchData();
+  }, []);
+
   const studio = studios.find(
     studio => studio.name === match.params.studioName
   );
-  console.log(studio);
+  console.log(studios, studio);
   return (
     <>
       <Header />
-      <Main>
-        <ImageWrapper>
-          <StyledImage src={studio.imageSource} />
-        </ImageWrapper>
-        <Wrapper>
-          <Title>{studio.name}</Title>
+      {studio && (
+        <Main>
+          <ImageWrapper>
+            <StyledImage src={studio.imageSource} />
+          </ImageWrapper>
+          <Wrapper>
+            <Title>{studio.name}</Title>
 
-          <Adress href={studio.website}>Website</Adress>
-          <Line />
-        </Wrapper>
-        <OpeneningTimesDiv>{studio.openingtime}</OpeneningTimesDiv>
-        <AccordionContracts contracts={studio.contracts} />
-        <AccordionCardio cardio={studio.cardio} />
-        <AccordionCourses courses={studio.courses} />
-        <AccordionStrength strength={studio.strength} />
-        <AccordionWellnes wellnes={studio.wellnes} />
+            <Adress href={studio.website}>Website</Adress>
+            <Line />
+          </Wrapper>
+          <OpeneningTimesDiv>{studio.openingtime}</OpeneningTimesDiv>
+          <AccordionContracts contracts={studio.contracts} />
+          <AccordionCardio cardio={studio.cardio} />
+          <AccordionCourses courses={studio.courses} />
+          <AccordionStrength strength={studio.strength} />
+          <AccordionWellnes wellnes={studio.wellnes} />
 
-        <IframeWrapper name={studio.name} iFrameSource={studio.iFrameSource}>
-          <StlyedIframe title={studio.name} src={studio.iFrameSource} />
-        </IframeWrapper>
-      </Main>
+          <IframeWrapper name={studio.name} iFrameSource={studio.iFrameSource}>
+            <StlyedIframe title={studio.name} src={studio.iFrameSource} />
+          </IframeWrapper>
+        </Main>
+      )}
     </>
   );
 }
