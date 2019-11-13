@@ -39,6 +39,6 @@ export default function BadgeDuration({ name, active, onBadgeClick }) {
 
 BadgeDuration.propTypes = {
   active: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func
+  name: PropTypes.string,
+  onBadgeClick: PropTypes.func
 };

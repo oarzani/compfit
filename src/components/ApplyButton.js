@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import Check from "./icons/Check";
+import PropTypes from "prop-types";
 import CheckSecond from "./icons/CheckSecond";
 
 const Button = styled.button`
@@ -31,3 +31,6 @@ export default function ApplyButton({ onClick }) {
     </Button>
   );
 }
+ApplyButton.propTypes = {
+  onClick: PropTypes.func
+};

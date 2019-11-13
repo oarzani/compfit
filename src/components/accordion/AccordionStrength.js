@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import OpenAccordion from "../icons/OpenAccordion";
 import { ListItem, AccordionDiv, Check } from "./AccordionCardio";
+import PropTypes from "prop-types";
 
 const AccordionWrapper = styled.div`
   width: 100%;
@@ -52,3 +53,9 @@ export default function AccordionStrength({ strength }) {
     </>
   );
 }
+AccordionStrength.propTypes = {
+  strength: PropTypes.array,
+  handleClick: PropTypes.func,
+  toggleContent: PropTypes.bool,
+  setToggleContent: PropTypes.func
+};

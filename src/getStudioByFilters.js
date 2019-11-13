@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export function getStudios() {
   const promise = fetch("http://localhost:3000/studios");
   return promise.then(response => response.json());
@@ -56,6 +58,21 @@ export async function getStudioByFilters(filters) {
     return true;
   });
 }
+
+getStudioByFilters.propTypes = {
+  options: PropTypes.array,
+  studio: PropTypes.object,
+  courses: PropTypes.bool,
+  wellnes: PropTypes.bool,
+  personaltraining: PropTypes.bool,
+  strength: PropTypes.bool,
+  cardio: PropTypes.bool,
+  ladyarea: PropTypes.bool,
+  flexx: PropTypes.bool,
+  six: PropTypes.bool,
+  twelve: PropTypes.bool,
+  twentyfour: PropTypes.bool
+};
 
 // Replaces the filter-function above:
 // export function getStudioByFilters(filter) {

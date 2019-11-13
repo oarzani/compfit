@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,7 +36,7 @@ const StyledList = styled.li`
   font-family: "Roboto", sans-serif;
 `;
 
-export default function CardElementText({ name, price, adress, contracts }) {
+export default function CardElementText({ name, adress, contracts }) {
   return (
     <Wrapper>
       <StudioName>{name}</StudioName>
@@ -54,3 +55,8 @@ export default function CardElementText({ name, price, adress, contracts }) {
     </Wrapper>
   );
 }
+CardElementText.propTypes = {
+  name: PropTypes.string,
+  adress: PropTypes.string,
+  contracts: PropTypes.array
+};

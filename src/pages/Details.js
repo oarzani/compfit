@@ -5,7 +5,7 @@ import AccordionCourses from "../components/accordion/AccordionCourses";
 import AccordionCardio from "../components/accordion/AccordionCardio";
 import AccordionStrength from "../components/accordion/AccordionStrength";
 import AccordionWellnes from "../components/accordion/AccordionWellnes";
-
+import PropTypes from "prop-types";
 import AccordionContracts from "../components/accordion/AccordionContracts";
 import { getStudios } from "../getStudioByFilters";
 
@@ -117,3 +117,10 @@ export default function Details({ match }) {
     </>
   );
 }
+
+Details.propTypes = {
+  iFrameSource: PropTypes.string,
+  website: PropTypes.string,
+  studio: PropTypes.object,
+  openingtime: PropTypes.string
+};

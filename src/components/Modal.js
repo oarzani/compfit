@@ -152,10 +152,10 @@ export default function Modal({
 }
 
 Modal.propTypes = {
-  children: PropTypes.node,
+  onButtonClick: PropTypes.func,
+  onBadgeClick: PropTypes.func,
+  onPriceChange: PropTypes.func,
   show: PropTypes.bool,
   hideBackdrop: PropTypes.bool,
-  onShow: PropTypes.func,
-  onAccept: PropTypes.func,
-  onClose: PropTypes.func
+  filter: PropTypes.bool
 };

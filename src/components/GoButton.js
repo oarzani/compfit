@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { StyledLink } from "./Header";
+import PropTypes from "prop-types";
 
 const WrappSearchBar = styled.form`
   display: flex;
@@ -29,3 +30,6 @@ export default function GoButton({ onClick }) {
     </WrappSearchBar>
   );
 }
+GoButton.propTypes = {
+  onClick: PropTypes.func
+};

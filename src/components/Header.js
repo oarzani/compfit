@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BackInWhite from "./icons/BackInWhite";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const HeaderDiv = styled.header`
   height: 60px;
@@ -44,3 +45,6 @@ export default function Header({ showBack = true }) {
     </HeaderDiv>
   );
 }
+Header.propTypes = {
+  showBack: PropTypes.bool
+};
