@@ -13,7 +13,7 @@ function waitTwoSeconds() {
 export async function getStudioByFilters(filters) {
   await waitTwoSeconds();
   const studios = await getStudios();
-  // const selectedfilters = Object.keys(filters); // filters === ['flexx', 'six', 'twelve']
+  
 
   return studios.filter(studio => {
     console.log(filters, studio);
