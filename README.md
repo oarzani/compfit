@@ -2,7 +2,7 @@
 
 Find the gym that fits you by using different filter-options. <br/>
 Want to know which Gym doesn't bound you for two years? Select the flexx-Option. <br/>
-It comes better: Want to have a gym with dynamic contract-terms and one that has the wellnes opportunities you looking for. Perfect! Select this option and don't waste your time with hard research to figure out which gym fits YOU !
+It comes better: Want to have a gym with dynamic contract-terms and one that has wellnes opportunities you looking for. Perfect! Select this option and don't waste your time with hard research to figure out which gym fits YOU !
 
 ## How to Initialize and Start
 
@@ -19,6 +19,6 @@ It comes better: Want to have a gym with dynamic contract-terms and one that has
 ### Miscellaneous
 
 - This app is not commercial
-- The used data contains a lot of dummy data
+- The used data contains mocking data
 - The app was developed as part of an Coding-Bootcamp at neuefische GmbH
-- This app uses MIT License
+- This app uses an MIT License
