@@ -22,3 +22,12 @@ It comes better: Want to have a gym with dynamic contract-terms and one that has
 - The used data contains mocking data
 - The app was developed as part of an Coding-Bootcamp at neuefische GmbH
 - This app uses an MIT License
+
+## Screenshots
+
+![Start Page] (public/pics/StartPage.png)
+![GymsList] (public/pics/GymsList.png)
+![Modal with filteroptions] (public/pics/ModalWithFilters.png)
+![Detailed view] (public/pics/Details.png)
+
+
