@@ -25,9 +25,9 @@ It comes better: Want to have a gym with dynamic contract-terms and one that has
 
 ## Screenshots
 
-<img src="public/pics/StartPage.png" width="160" height="300">
-<img src="public/pics/GymsList.png" width="160" height="300">
-<img src="public/pics/ModalWithFilters.png" width="160" height="300">
-<img src="public/pics/Details.png" width="160" height="300">
+<img src="public/pics/StartPage.png" width="320" height="600">
+<img src="public/pics/GymsList.png" width="320" height="600">
+<img src="public/pics/ModalWithFilters.png" width="320" height="600">
+<img src="public/pics/Details.png" width="320" height="600">
 
 
