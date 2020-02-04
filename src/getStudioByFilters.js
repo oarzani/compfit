@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export function getStudios() {
-  const promise = fetch("http://localhost:3000/studios");
+  const promise = fetch("http://localhost:5000/studios");
   return promise.then(response => response.json());
 }
 function waitTwoSeconds() {
